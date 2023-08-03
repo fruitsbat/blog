@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-for="post in blogposts">
+    <!-- <div v-for="post in blogposts">
       <NuxtLink :to="post._path" >{{post.title}}</NuxtLink>
-    </div>
+    </div> -->
   </div>
 </template>
 
