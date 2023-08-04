@@ -43,7 +43,7 @@ import '~/assets/css/crt.css';
   align-items: center;
   padding: var(--pad-size);
   word-break: break-word;
-  animation: textShadow 30s infinite;
+  animation: textShadow 60s infinite;
 }
 
 </style>
