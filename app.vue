@@ -27,7 +27,14 @@
 }
 
 .navbar {
+  padding: var(--pad-size);
+  overflow: visible;
   background-color: var(--accent);
   box-shadow: 0 -0.1em 1em var(--ternary-accent), 0 -0.1em 1em var(--secondary-accent);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: fit-content;
+  gap: var(--pad-size);
 }
 </style>
