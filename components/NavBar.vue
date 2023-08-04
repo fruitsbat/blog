@@ -24,6 +24,10 @@ a {
   background-image: url("/img/texture.webp");
 }
 
+a:hover {
+  animation: animatedBackground 30s linear infinite;
+}
+
 svg {
   width: var(--fs-regular);
   height: var(--fs-regular);

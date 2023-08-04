@@ -20,6 +20,7 @@ console.log(page.image);
 
 <script lang="ts">
 import '~/assets/css/crt.css';
+import '~/assets/css/animated_background.css';
 </script>
 
 
@@ -63,14 +64,5 @@ import '~/assets/css/crt.css';
   animation: animatedBackground 120s linear infinite;
   height: auto;
   padding: var(--pad-size);
-}
-
-@keyframes animatedBackground{
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0px -640px;
-  }
 }
 </style>
