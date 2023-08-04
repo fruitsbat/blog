@@ -21,7 +21,8 @@
 }
 
 .content {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hide;
   flex-grow: 1;
   background-color: var(--black);
 }
