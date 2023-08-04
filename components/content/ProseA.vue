@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :href="href" :target="target">
     <slot />
-    <span><GlobeAltIcon/>{{href}}</span>
+    <span class="iconbutton"><GlobeAltIcon/>{{href}}</span>
   </NuxtLink>
 </template>
 
@@ -22,9 +22,16 @@ defineProps({
 
 <style scoped>
 a {
-  background-color: var(--accent);
-  color: var(--black);
+  border-style: solid;
+  border-color: var(--accent);
+  border-radius: var(--radius);
+  color: var(--white);
   text-decoration: none;
+}
+
+.iconbutton {
+  background-color: var(--accent);
+  border-radius: calc(var(--radius) - var(--border-width));
 }
 
 svg {

@@ -35,5 +35,9 @@ defineProps({
   width: 100%;
   overflow-x: scroll;
   padding: var(--pad-size);
+  font-size: var(--fs-regular);
+  border-style: solid;
+  border-color: var(--accent);
+  border-radius: var(--radius);
 }
 </style>
