@@ -2,7 +2,7 @@
   <main>
       <ContentDoc v-if="$route.params.slug" :path="$route.path">
           <div class="title-container" v-bind:style="{backgroundImage: 'url('+page.image+')'}">
-            <div class="color-tint-container">
+            <div class="color-tint-container scanlines">
             <h1>{{page.title ?? "no title"}}</h1>
             </div>
           </div>
@@ -43,7 +43,7 @@ import '~/assets/css/crt.css';
   align-items: center;
   padding: var(--pad-size);
   word-break: break-word;
-  animation: textShadow 60s infinite;
+  animation: textShadow 24s infinite;
 }
 
 </style>
