@@ -1,0 +1,14 @@
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.2em 0px 0.2em var(--secondary-accent),
+      -0.2em 0px 0.2em var(--ternary-accent);
+  }
+  50% {
+    text-shadow: -0.2em 0px 0.2em var(--secondary-accent),
+      0.2em 0px 0.2em var(--ternary-accent);
+  }
+  100% {
+    text-shadow: 0.2em 0px 0.2em var(--secondary-accent),
+      -0.2em 0px 0.2em var(--ternary-accent);
+  }
+}

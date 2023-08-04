@@ -16,6 +16,10 @@ const { page, next, prev } = useContent();
 console.log(page.image);
 </script>
 
+<script lang="ts">
+import '~/assets/css/crt.css';
+</script>
+
 
 <style scoped>
 .post-content {
@@ -39,6 +43,7 @@ console.log(page.image);
   align-items: center;
   padding: var(--pad-size);
   word-break: break-word;
+  animation: textShadow 30s infinite;
 }
 
 </style>
