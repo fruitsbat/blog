@@ -22,7 +22,6 @@
 
 .content {
   overflow-y: scroll;
-  overflow-x: hide;
   flex-grow: 1;
   background-color: var(--black);
 }
@@ -37,10 +36,5 @@
   justify-content: center;
   height: fit-content;
   gap: var(--pad-size);
-  overflow-x: scroll;
-}
-
-.navbar::-webkit-scrollbar {
-  display: none;
 }
 </style>
