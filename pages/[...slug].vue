@@ -2,8 +2,10 @@
   <main>
       <ContentDoc v-if="$route.params.slug" :path="$route.path">
           <div class="title-container" v-bind:style="{backgroundImage: 'url('+page.image+')'}">
+            <div class="background-image-container">
             <div class="color-tint-container scanlines">
             <h1 class="titletext">{{page.title ?? "no title"}}</h1>
+            </div>
             </div>
           </div>
           <ContentRendererMarkdown class="post-content" :value="page"/>
@@ -47,6 +49,11 @@ import '~/assets/css/crt.css';
   padding: var(--pad-size);
   word-break: break-word;
   animation: textShadow 24s infinite;
+  height: 100%;
+}
+
+.background-image-container {
+  width: 100%;
   background-image: url("/img/texture.webp");
   animation: animatedBackground 120s linear infinite;
 }
