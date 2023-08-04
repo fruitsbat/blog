@@ -38,7 +38,7 @@ console.log(page.image);
   display: flex;
   align-items: center;
   padding: var(--pad-size);
-  line-break: anywhere;
+  word-break: break-word;
 }
 
 </style>
