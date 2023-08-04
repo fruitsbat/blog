@@ -25,7 +25,6 @@ import '~/assets/css/crt.css';
 
 <style scoped>
 .post-content {
-  background-color: var(--black);
   color: var(--white);
   padding: var(--pad-size);
   margin: auto;

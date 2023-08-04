@@ -13,12 +13,15 @@
 .app {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100vh;
   width: 100vw;
 }
 
 .content {
   overflow: scroll;
+  flex-grow: 1;
+  background-color: var(--black);
 }
 </style>
