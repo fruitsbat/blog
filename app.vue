@@ -11,11 +11,12 @@
 
 <style scoped>
 .app {
+  position: fixed;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 
@@ -23,5 +24,9 @@
   overflow: scroll;
   flex-grow: 1;
   background-color: var(--black);
+}
+
+.navbar {
+  background-color: var(--accent);
 }
 </style>
