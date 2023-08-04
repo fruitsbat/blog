@@ -15,6 +15,8 @@ export default defineNuxtConfig({
   modules: ["@nuxt/content"],
   nitro: {
     prerender: {
+      crawlLinks: true,
+      failOnError: false,
       routes: ["/index.xml"],
     },
   },
