@@ -26,8 +26,12 @@
 
 
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
   font-family: 'atkinson';
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-xxl);
 }

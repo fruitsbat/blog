@@ -7,6 +7,10 @@ export default defineNuxtConfig({
   ssr: true,
   devtools: {
     enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
   },
   modules: ["@nuxt/content"],
   nitro: {
@@ -34,5 +38,8 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+  content: {
+    documentDriven: true,
   },
 });
