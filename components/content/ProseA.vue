@@ -1,12 +1,13 @@
 <template>
   <NuxtLink :href="href" :target="target">
+    <GlobeAltIcon />
     <slot />
-    <span class="iconbutton"><GlobeAltIcon/>{{href}}</span>
   </NuxtLink>
 </template>
 
 <script setup lang="ts">
-import { GlobeAltIcon } from '@heroicons/vue/24/outline';
+import { GlobeAltIcon } from "@heroicons/vue/24/solid";
+import '~/assets/css/animated_background.css';
 defineProps({
   href: {
     type: String,
@@ -22,19 +23,28 @@ defineProps({
 
 <style scoped>
 a {
-  border-style: solid;
-  border-color: var(--accent);
+  padding-left: var(--pad-size-small);
+  padding-right: var(--pad-size-small);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pad-size-small);
+  color: var(--accent);
+  background-color: var(--black);
   border-radius: var(--radius);
-  color: var(--white);
   text-decoration: none;
-}
-
-.iconbutton {
-  background-color: var(--accent);
-  border-radius: calc(var(--radius) - var(--border-width));
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: var(--border-width);
+  background-image: url("/img/texture.webp");
 }
 
 svg {
   width: var(--fs-regular);
+  height: var(--fs-regular);
+  color: var(--accent);
 }
+
+a:hover {
+  animation: animatedBackground 30s linear infinite;
+}
+
 </style>

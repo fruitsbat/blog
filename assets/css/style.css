@@ -54,3 +54,7 @@ code {
 h1 {
   font-size: var(--fs-xxl);
 }
+
+ul {
+  font-size: var(--fs-regular);
+}

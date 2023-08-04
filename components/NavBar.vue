@@ -14,7 +14,6 @@ a {
   display: flex;
   gap: var(--pad-size-small);
   text-decoration: none;
-  justfy-content: center;
   align-items: center;
   background: var(--black);
   padding: var(--pad-size-small);
