@@ -19,7 +19,8 @@ console.log(page.image);
 
 <style scoped>
 .post-content {
-  background-color: red;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .title-container {
