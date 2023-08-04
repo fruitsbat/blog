@@ -2,8 +2,8 @@
   <main>
       <ContentDoc v-if="$route.params.slug" :path="$route.path">
           <div class="title-container" v-bind:style="{backgroundImage: 'url('+page.image+')'}">
+            <div class="color-tint-container">
             <div class="background-image-container">
-            <div class="color-tint-container scanlines">
             <h1 class="titletext">{{page.title ?? "no title"}}</h1>
             </div>
             </div>
@@ -33,8 +33,10 @@ import '~/assets/css/crt.css';
 }
 
 .title-container {
+  display: flex;
   background-repeat: no-repeat;
   background-size: cover;
+  align-items: stretch;
   min-height: 50vh;
   display: flex;
   color: var(--accent);
@@ -45,17 +47,23 @@ import '~/assets/css/crt.css';
   width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
-  padding: var(--pad-size);
   word-break: break-word;
   animation: textShadow 24s infinite;
-  height: 100%;
+  height: auto;
+  align-items: stretch;
 }
 
 .background-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: auto;
   width: 100%;
   background-image: url("/img/texture.webp");
   animation: animatedBackground 120s linear infinite;
+  height: auto;
+  padding: var(--pad-size);
 }
 
 @keyframes animatedBackground{
