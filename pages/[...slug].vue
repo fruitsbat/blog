@@ -3,7 +3,7 @@
       <ContentDoc v-if="$route.params.slug" :path="$route.path">
           <div class="title-container" v-bind:style="{backgroundImage: 'url('+page.image+')'}">
             <div class="color-tint-container scanlines">
-            <h1>{{page.title ?? "no title"}}</h1>
+            <h1 class="titletext">{{page.title ?? "no title"}}</h1>
             </div>
           </div>
           <ContentRendererMarkdown class="post-content" :value="page"/>
@@ -44,6 +44,6 @@ import '~/assets/css/crt.css';
   padding: var(--pad-size);
   word-break: break-word;
   animation: textShadow 24s infinite;
+  background-image: url("/img/texture.webp");
 }
-
 </style>

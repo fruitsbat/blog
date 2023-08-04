@@ -23,8 +23,8 @@
   --radius: calc(var(--fs-large));
   --border-width: calc(var(--pad-size-small) * 0.618);
   --accent: #aaf0d1;
-  --secondary-accent: #d1aaf0;
-  --ternary-accent: #f0d1aa;
+  --ternary-accent: #d1aaf0;
+  --secondary-accent: #f0d1aa;
   --black: #030f0a;
   --white: #fdfffe;
   --black-transparent: rgba(3, 15, 10, 0.6);
