@@ -37,5 +37,10 @@
   justify-content: center;
   height: fit-content;
   gap: var(--pad-size);
+  overflow-x: scroll;
+}
+
+.navbar::-webkit-scrollbar {
+  display: none;
 }
 </style>

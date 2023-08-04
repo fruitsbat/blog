@@ -1,12 +1,13 @@
 <template>
 <nav>
+  <NuxtLink to="/"><HomeIcon/>home</NuxtLink>
   <NuxtLink to="/log"><RssIcon/>weblog</NuxtLink>
   <NuxtLink to="/music"><MusicalNoteIcon />music</NuxtLink>
 </nav>
 </template>
 
 <script setup lang="ts">
-import { RssIcon, MusicalNoteIcon } from '@heroicons/vue/24/solid';
+import { HomeIcon, RssIcon, MusicalNoteIcon } from '@heroicons/vue/24/solid';
 </script>
 
 <style scoped>
