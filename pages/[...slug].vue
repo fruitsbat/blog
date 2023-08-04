@@ -25,6 +25,9 @@ import '~/assets/css/crt.css';
 .post-content {
   background-color: var(--black);
   color: var(--white);
+  padding: var(--pad-size);
+  margin: auto;
+  max-width: 1920px;
 }
 
 .title-container {
@@ -45,5 +48,15 @@ import '~/assets/css/crt.css';
   word-break: break-word;
   animation: textShadow 24s infinite;
   background-image: url("/img/texture.webp");
+  animation: animatedBackground 120s linear infinite;
+}
+
+@keyframes animatedBackground{
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0px -640px;
+  }
 }
 </style>
