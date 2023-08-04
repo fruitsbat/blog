@@ -28,5 +28,6 @@
 
 .navbar {
   background-color: var(--accent);
+  box-shadow: -25vw -0.1em 1em var(--ternary-accent), 75vw -0.1em 1em var(--secondary-accent);
 }
 </style>
