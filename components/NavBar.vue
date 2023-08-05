@@ -39,7 +39,35 @@ svg {
 
 nav {
   display: flex;
-  margin: 0em;
+  width: 100%;
+  padding: var(--pad-size);
+  align-items: center;
+  justify-content: center;
   gap: var(--pad-size);
+  background-image: url("/img/texture.webp");
+}
+
+@media screen and (max-width: 720px) {
+  a {
+    flex-direction: column;
+  }
+
+  svg {
+    width: var(--fs-large);
+    height: var(--fs-large);
+  }
+}
+
+@media (orientation: landscape) {
+  nav {
+    flex-grow: 1;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  a {
+    line-break: strict;
+    word-break: keep-all;
+  }
 }
 </style>

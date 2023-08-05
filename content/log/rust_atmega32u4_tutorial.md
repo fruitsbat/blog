@@ -38,7 +38,7 @@ of course this might change in the future, but right now you need to specify tha
 to do this, run: `rustup override set nightly-2023-03-24`.
 if just setting `rustup override set nightly` works for you that's great.
 
-### `Cargo.toml`
+### Cargo.toml
 in this folder you will see a file called `Cargo.toml`.
 this is where details about your project are specified.
 

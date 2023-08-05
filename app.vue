@@ -27,7 +27,6 @@
 }
 
 .navbar {
-  padding: var(--pad-size);
   overflow: visible;
   background-color: var(--accent);
   box-shadow: 0 -0.1em 1em var(--ternary-accent), 0 -0.1em 1em var(--secondary-accent);
@@ -41,6 +40,16 @@
 @media (prefers-color-scheme: light) {
   .content {
     background-color: var(--white);
+  }
+}
+
+@media (orientation: landscape) {
+  .app {
+    flex-direction: row-reverse;
+  }
+  
+  .navbar {
+    height: 100%;
   }
 }
 </style>
