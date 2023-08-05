@@ -34,6 +34,7 @@ a:hover {
 svg {
   width: var(--fs-regular);
   height: var(--fs-regular);
+  @include drop-shadows;
 }
 
 nav {
