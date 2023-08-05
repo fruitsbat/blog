@@ -20,5 +20,12 @@ a {
   font-size: var(--fs-xl);
   color: var(--secondary-accent);
   text-decoration: none;
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--black);
+  }
 }
 </style>

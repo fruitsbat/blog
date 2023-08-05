@@ -65,4 +65,10 @@ import '~/assets/css/animated_background.css';
   height: auto;
   padding: var(--pad-size);
 }
+
+@media (prefers-color-scheme: dark) {
+  .post-content {
+    color: var(--black);
+  }
+}
 </style>

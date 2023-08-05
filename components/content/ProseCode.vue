@@ -40,4 +40,10 @@ defineProps({
   border-color: var(--accent);
   border-radius: var(--radius);
 }
+
+@media (prefers-color-scheme: dark) {
+  .outline{
+    background-color: var(--black);
+  }
+}
 </style>

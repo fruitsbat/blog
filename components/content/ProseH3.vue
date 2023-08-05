@@ -21,4 +21,11 @@ a {
   font-size: var(--fs-large);
   text-decoration: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--black);
+  }
+}
+
 </style>

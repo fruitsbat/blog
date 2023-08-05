@@ -37,4 +37,10 @@
   height: fit-content;
   gap: var(--pad-size);
 }
+
+@media (prefers-color-scheme: dark) {
+  .content {
+    background-color: var(--white);
+  }
+}
 </style>
