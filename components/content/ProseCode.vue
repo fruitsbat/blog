@@ -43,6 +43,7 @@ defineProps({
   border-radius: var(--radius);
   background-color: var(--black);
   background-image: url("/img/texture.webp");
+  overflow-x: auto;
   @include drop-shadows;
   @include text-shadows;
 }
