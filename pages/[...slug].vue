@@ -23,6 +23,9 @@ console.log(page.image);
 <style scoped lang="scss">
 @import "@/assets/scss/shadows.scss";
 .post-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-size);
   color: var(--white);
   padding: var(--pad-size);
   margin: auto;
