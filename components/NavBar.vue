@@ -1,13 +1,22 @@
 <template>
-<nav>
-  <NuxtLink to="/"><HomeIcon/>home</NuxtLink>
-  <NuxtLink to="/log"><RssIcon/>weblog</NuxtLink>
-  <NuxtLink to="/music"><MusicalNoteIcon />music</NuxtLink>
-</nav>
+  <nav>
+    <NuxtLink to="/"
+      ><div class="icon-container"><HomeIcon /></div>
+      home</NuxtLink
+    >
+    <NuxtLink to="/log"
+      ><div class="icon-container"><RssIcon /></div>
+      weblog</NuxtLink
+    >
+    <NuxtLink to="/music"
+      ><div class="icon-container"><MusicalNoteIcon /></div>
+      music</NuxtLink
+    >
+  </nav>
 </template>
 
 <script setup lang="ts">
-import { HomeIcon, RssIcon, MusicalNoteIcon } from '@heroicons/vue/24/solid';
+import { HomeIcon, RssIcon, MusicalNoteIcon } from "@heroicons/vue/24/solid";
 </script>
 
 <style scoped lang="scss">
@@ -50,6 +59,10 @@ nav {
   overflow-x: auto;
 }
 
+.icon-container {
+  display: flex;
+}
+
 @media screen and (max-width: 720px) {
   a {
     padding: 0em;
@@ -59,18 +72,25 @@ nav {
     background-image: none;
   }
 
-  a:hover > svg {
+  a:hover > .icon-container {
     @include animated-background;
   }
 
   svg {
-    background-image: url("/img/texture.webp");
     padding: var(--pad-size-small);
     color: var(--accent);
-    border-radius: var(--radius);
     width: var(--fs-xl);
     height: var(--fs-xl);
+  }
+
+  .icon-container {
+    aspect-ratio: 1/1;
+    width: min-content;
+    height: min-content;
+    background-image: url("/img/texture.webp");
+    border-radius: var(--radius);
     background-color: var(--black);
+    color: var(--accent);
   }
 }
 
