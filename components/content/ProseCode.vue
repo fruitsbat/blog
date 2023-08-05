@@ -41,12 +41,9 @@ defineProps({
   border-style: solid;
   border-color: var(--accent);
   border-radius: var(--radius);
+  background-color: var(--black);
+  background-image: url("/img/texture.webp");
+  @include drop-shadows;
   @include text-shadows;
-}
-
-@media (prefers-color-scheme: light) {
-  .outline{
-    background-color: var(--black);
-  }
 }
 </style>

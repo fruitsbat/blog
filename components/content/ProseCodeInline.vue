@@ -18,7 +18,8 @@ code {
   text-decoration: none;
   text-decoration-color: var(--accent);
   text-decoration-thickness: var(--border-width);
-  @include text-shadows;
+  background-image: url("/img/texture.webp");
+  @include drop-shadows;
 
 }
 

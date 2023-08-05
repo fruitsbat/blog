@@ -10,8 +10,11 @@
 import { HomeIcon, RssIcon, MusicalNoteIcon } from '@heroicons/vue/24/solid';
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/scss/shadows.scss";
 a {
+  @include text-shadows;
+  @include drop-shadows;
   display: flex;
   gap: var(--pad-size-small);
   text-decoration: none;

@@ -10,14 +10,14 @@ import { GlobeAltIcon } from "@heroicons/vue/24/solid";
 defineProps({
   href: {
     type: String,
-    default: ''
+    default: "",
   },
   target: {
     type: String,
     default: undefined,
-    required: false
-  }
-})
+    required: false,
+  },
+});
 </script>
 
 <style scoped lang="scss">
@@ -38,17 +38,17 @@ a {
   text-decoration-thickness: var(--border-width);
   background-image: url("/img/texture.webp");
   @include text-shadows;
+  @include drop-shadows;
 }
 
 svg {
   width: var(--fs-regular);
   height: var(--fs-regular);
   color: var(--accent);
+  @include drop-shadows;
 }
 
 a:hover {
-  @include animated-shadows;
   @include animated-background;
 }
-
 </style>
