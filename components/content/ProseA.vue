@@ -7,7 +7,6 @@
 
 <script setup lang="ts">
 import { GlobeAltIcon } from "@heroicons/vue/24/solid";
-import '~/assets/css/animated_background.css';
 defineProps({
   href: {
     type: String,
@@ -21,7 +20,10 @@ defineProps({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/scss/shadows.scss";
+@import "@/assets/scss/animated_background.scss";
+
 a {
   padding-left: var(--pad-size-small);
   padding-right: var(--pad-size-small);
@@ -35,6 +37,7 @@ a {
   text-decoration-color: var(--accent);
   text-decoration-thickness: var(--border-width);
   background-image: url("/img/texture.webp");
+  @include text-shadows;
 }
 
 svg {
@@ -44,7 +47,8 @@ svg {
 }
 
 a:hover {
-  animation: animatedBackground 30s linear infinite;
+  @include animated-shadows;
+  @include animated-background;
 }
 
 </style>

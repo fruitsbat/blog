@@ -15,14 +15,17 @@ const { anchorLinks } = useRuntimeConfig().public.content
 const generate = anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes(heading)
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/scss/shadows.scss";
+
 a {
   color: var(--ternary-accent);
   font-size: var(--fs-large);
   text-decoration: none;
+  @include text-shadows;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   a {
     color: var(--black);
   }

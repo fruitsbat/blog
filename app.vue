@@ -38,7 +38,7 @@
   gap: var(--pad-size);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   .content {
     background-color: var(--white);
   }

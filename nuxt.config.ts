@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: true,
   },
-  css: ["~/assets/css/style.css"],
+  css: ["~/assets/scss/style.scss"],
   ssr: true,
   devtools: {
     enabled: true,

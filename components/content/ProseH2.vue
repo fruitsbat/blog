@@ -9,21 +9,25 @@
 
 <script setup lang="ts">
 import { useRuntimeConfig } from '#imports'
+
 defineProps<{ id?: string }>()
 const heading = 2
 const { anchorLinks } = useRuntimeConfig().public.content
 const generate = anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes(heading)
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/scss/shadows.scss";
+
 a {
   font-size: var(--fs-xl);
   color: var(--secondary-accent);
   text-decoration: none;
   font-weight: bold;
+  @include text-shadows;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   a {
     color: var(--black);
   }

@@ -1,3 +1,12 @@
+@mixin text-shadows {
+  text-shadow: 0.01em 0px 0.1em var(--secondary-accent),
+    -0.01em 0px 0.01em var(--ternary-accent);
+}
+
+@mixin animated-shadows {
+  animation: textShadow 24s infinite;
+}
+
 @keyframes textShadow {
   0% {
     text-shadow: 0.1em 0px 0.1em var(--secondary-accent),

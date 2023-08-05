@@ -18,13 +18,9 @@ const { page, next, prev } = useContent();
 console.log(page.image);
 </script>
 
-<script lang="ts">
-import '~/assets/css/crt.css';
-import '~/assets/css/animated_background.css';
-</script>
 
-
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/scss/shadows.scss";
 .post-content {
   color: var(--white);
   padding: var(--pad-size);
@@ -48,9 +44,9 @@ import '~/assets/css/animated_background.css';
   height: auto;
   display: flex;
   word-break: break-word;
-  animation: textShadow 24s infinite;
   height: auto;
   align-items: stretch;
+  @include animated-shadows;
 }
 
 .background-image-container {
@@ -66,7 +62,7 @@ import '~/assets/css/animated_background.css';
   padding: var(--pad-size);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   .post-content {
     color: var(--black);
   }

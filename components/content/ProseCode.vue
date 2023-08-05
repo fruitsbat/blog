@@ -30,7 +30,9 @@ defineProps({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/scss/shadows.scss";
+
 .outline {
   width: 100%;
   overflow-x: scroll;
@@ -39,9 +41,10 @@ defineProps({
   border-style: solid;
   border-color: var(--accent);
   border-radius: var(--radius);
+  @include text-shadows;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   .outline{
     background-color: var(--black);
   }
