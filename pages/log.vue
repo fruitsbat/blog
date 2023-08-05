@@ -7,6 +7,7 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ documentDriven: false });
 // query blogposts
   const documents = await queryContent()
     .sort({ date: -1 })
@@ -15,5 +16,4 @@
   const blogposts = documents.filter(
     (doc) => doc?._path?.includes("/log") && !doc?._partial
   );
-
 </script>

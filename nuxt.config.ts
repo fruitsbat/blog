@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      failOnError: false,
+      failOnError: true,
       routes: ["/index.xml"],
     },
   },

@@ -47,6 +47,7 @@ nav {
   justify-content: center;
   gap: var(--pad-size);
   background-image: url("/img/texture.webp");
+  overflow-x: auto;
 }
 
 @media screen and (max-width: 720px) {
@@ -77,7 +78,7 @@ nav {
   nav {
     flex-grow: 1;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
   }
   a {

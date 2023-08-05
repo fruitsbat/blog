@@ -35,7 +35,7 @@ defineProps({
 
 .outline {
   width: 100%;
-  overflow-x: scroll;
+  white-space: pre-wrap;
   padding: var(--pad-size);
   font-size: var(--fs-regular);
   border-style: solid;

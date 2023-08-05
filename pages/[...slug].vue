@@ -14,6 +14,7 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ documentDriven: true });
 const { page, next, prev } = useContent();
 console.log(page.image);
 </script>
@@ -25,7 +26,6 @@ console.log(page.image);
   color: var(--white);
   padding: var(--pad-size);
   margin: auto;
-  max-width: 1920px;
 }
 
 .title-container {
