@@ -29,13 +29,21 @@
 .navbar {
   z-index: 999999999999;
   overflow: visible;
-  background-color: var(--accent);
-  box-shadow: 0 -0.1em 1em var(--ternary-accent), 0 -0.1em 1em var(--secondary-accent);
+  box-shadow: 0 -0.1em 1em var(--ternary-accent),
+    0 -0.1em 1em var(--secondary-accent);
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: fit-content;
   gap: var(--pad-size);
+  background-color: var(--black);
+  background-image: linear-gradient(
+    90deg,
+    var(--secondary-accent),
+    var(--accent) 12.5%,
+    var(--accent) 87.5%,
+    var(--ternary-accent)
+  );
 }
 
 @media (prefers-color-scheme: light) {
@@ -48,10 +56,17 @@
   .app {
     flex-direction: row-reverse;
   }
-  
+
   .navbar {
-    box-shadow: 0.1em 0em 1em var(--ternary-accent), -0.1em 0em 1em var(--secondary-accent);
+    box-shadow: 0.1em 0em 1em var(--ternary-accent),
+      -0.1em 0em 1em var(--secondary-accent);
     height: 100%;
+    background-image: linear-gradient(
+      var(--secondary-accent),
+      var(--accent) 12.5%,
+      var(--accent) 87.5%,
+      var(--ternary-accent)
+    );
   }
 }
 </style>
