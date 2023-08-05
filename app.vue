@@ -49,6 +49,7 @@
   }
   
   .navbar {
+    box-shadow: 0.1em 0em 1em var(--ternary-accent), -0.1em 0em 1em var(--secondary-accent);
     height: 100%;
   }
 }
