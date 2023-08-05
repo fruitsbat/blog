@@ -12,6 +12,8 @@ import { HomeIcon, RssIcon, MusicalNoteIcon } from '@heroicons/vue/24/solid';
 
 <style scoped lang="scss">
 @import "@/assets/scss/shadows.scss";
+@import "@/assets/scss/animated_background.scss";
+
 a {
   @include text-shadows;
   @include drop-shadows;
@@ -49,12 +51,25 @@ nav {
 
 @media screen and (max-width: 720px) {
   a {
+    padding: 0em;
     flex-direction: column;
+    background-color: transparent;
+    color: var(--black);
+    background-image: none;
+  }
+
+  a:hover > svg {
+    @include animated-background;
   }
 
   svg {
-    width: var(--fs-large);
-    height: var(--fs-large);
+    background-image: url("/img/texture.webp");
+    padding: var(--pad-size-small);
+    color: var(--accent);
+    border-radius: var(--radius);
+    width: var(--fs-xl);
+    height: var(--fs-xl);
+    background-color: var(--black);
   }
 }
 
