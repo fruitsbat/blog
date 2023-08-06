@@ -69,7 +69,7 @@ a:hover .rss-link-texture {
 }
 
 .titlebar {
-  padding: var(--pad-size);
+  padding: var(--pad-size-small);
   background-image: url("/img/texture.webp");
   display: flex;
   align-items: center;

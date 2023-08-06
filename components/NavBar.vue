@@ -51,7 +51,7 @@ svg {
 nav {
   display: flex;
   width: 100%;
-  padding: var(--pad-size);
+  padding: var(--pad-size-small);
   align-items: center;
   justify-content: center;
   gap: var(--pad-size);
