@@ -1,5 +1,4 @@
 <template>
-  <span>{{computedX}} y: {{computedY}}</span>
   <NuxtLink :to="post._path">
     <div
       ref="target"
@@ -27,11 +26,11 @@ const { elementX, elementY } = useMouseInElement(target);
 const { width, height } = useElementSize(target);
 
 const computedX = computed(() => {
-  return `${((elementX.value / width.value) - 0.5) * 48}deg`;
+  return `${((elementX.value / width.value) - 0.5) * 24}deg`;
 });
 
 const computedY = computed(() => {
-  return `${(((elementY.value / height.value) - 0.5) * 48)}deg`;
+  return `${(((elementY.value / height.value) - 0.5) * 24)}deg`;
 });
 </script>
 
