@@ -105,5 +105,9 @@ h2 {
     display: flex;
     flex-direction: column;
   }
+
+  h2 {
+    font-size: var(--fs-large);
+  }
 }
 </style>

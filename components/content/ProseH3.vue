@@ -31,4 +31,10 @@ a {
   }
 }
 
+@media screen and (max-width: 720px) {
+  a {
+    font-size: var(--fs-regular);
+  }
+} 
+
 </style>

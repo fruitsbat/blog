@@ -70,4 +70,10 @@ console.log(page.image);
     color: var(--black);
   }
 }
+
+@media screen and (max-width: 1920px) {
+  h1 {
+    font-size: var(--fs-xl);
+  }
+}
 </style>

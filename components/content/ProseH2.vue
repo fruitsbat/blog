@@ -32,4 +32,10 @@ a {
     color: var(--black);
   }
 }
+
+@media screen and (max-width: 720px) {
+  a {
+    font-size: var(--fs-large);
+  }
+}
 </style>
