@@ -100,7 +100,7 @@ h2 {
   font-size: var(--fs-xl);
 }
 
-@media screen and (max-width: 720px) {
+@container (max-width: 720px) {
   .postlist {
     display: flex;
     flex-direction: column;

@@ -24,6 +24,7 @@
   overflow-y: scroll;
   flex-grow: 1;
   background-color: var(--black);
+  container: inline-size;
 }
 
 .navbar {
