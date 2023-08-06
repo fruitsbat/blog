@@ -1,6 +1,6 @@
 ---
 date: "4 April 2023"
-title: "how to run rust code on a circuit playground classic / atmega32u4"
+title: "rust on atmega32u4"
 image: "/img/blink.webp"
 ---
 
