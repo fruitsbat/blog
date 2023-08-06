@@ -1,5 +1,5 @@
 ---
-title: "meow meow kitties"
+title: "meow meow"
 date: "3 August 2023"
 image: "/img/kitty-dance.gif"
 image_description: "a kitty doing a cool little dance"

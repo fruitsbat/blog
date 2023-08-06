@@ -32,6 +32,7 @@ const blogposts = documents.filter(
 <style scoped lang="scss">
 @import "@/assets/scss/shadows.scss";
 @import "@/assets/scss/animated_background.scss";
+$min-card-height: 64vw;
 
 .postlist {
   padding: var(--pad-size);
@@ -46,14 +47,12 @@ const blogposts = documents.filter(
   background-size: cover;
   border-radius: var(--radius);
   @include drop-shadows;
-  min-height: 320px;
 }
 
 .postcard-overlay {
   background-color: var(--black-transparent);
   border-radius: var(--radius);
   height: 100%;
-  min-height: 320px;
 }
 
 .postcard-texture {
@@ -65,7 +64,6 @@ const blogposts = documents.filter(
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  min-height: 320px;
 }
 
 h2 {
@@ -90,7 +88,7 @@ h2 {
   font-size: var(--fs-xl);
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1280px) {
   .postlist {
     display: flex;
     flex-direction: column;
@@ -100,8 +98,20 @@ h2 {
     font-size: var(--fs-small);
   }
 
+  .postcard,
+  .postcard-overlay,
+  .postcard-texture {
+    min-height: $min-card-height;
+  }
+
   h2 {
     font-size: var(--fs-large);
   }
+}
+
+.postcard,
+.postcard-overlay,
+.postcard-texture {
+  min-height: 320px;
 }
 </style>
