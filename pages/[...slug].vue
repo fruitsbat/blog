@@ -1,24 +1,30 @@
 <template>
   <main>
-      <ContentDoc v-if="$route.params.slug" :path="$route.path">
-          <div class="title-container" v-bind:style="{backgroundImage: 'url('+page.image+')'}">
-            <div class="color-tint-container">
-            <div class="background-image-container">
-            <h1 class="titletext">{{page.title ?? "no title"}}</h1>
-            </div>
-            </div>
+    <ContentDoc v-if="$route.params.slug" :path="$route.path">
+      <div
+        class="title-container"
+        v-bind:style="{ backgroundImage: 'url(' + page.image + ')' }"
+      >
+        <div class="color-tint-container">
+          <div class="background-image-container">
+            <h1 class="titletext">{{ page.title ?? "no title" }}</h1>
           </div>
-          <ContentRendererMarkdown class="post-content" :value="page"/>
-      </ContentDoc>
+        </div>
+      </div>
+      <ol>
+        <li v-for="heading in toc.links">
+          <a :href="`#${heading.id}`">{{ heading.text ?? "no heading" }}</a>
+        </li>
+      </ol>
+      <ContentRendererMarkdown class="post-content" :value="page" />
+    </ContentDoc>
   </main>
 </template>
 
 <script setup lang="ts">
 definePageMeta({ documentDriven: true });
-const { page, next, prev } = useContent();
-console.log(page.image);
+const { page, toc, next, prev } = useContent();
 </script>
-
 
 <style scoped lang="scss">
 @import "@/assets/scss/shadows.scss";
@@ -63,6 +69,12 @@ console.log(page.image);
   animation: animatedBackground 120s linear infinite;
   height: auto;
   padding: var(--pad-size);
+}
+
+ol {
+  list-style: decimal;
+  list-style-position: inside;
+  margin: var(--pad-size);
 }
 
 @media (prefers-color-scheme: light) {
