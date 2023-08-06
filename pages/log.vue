@@ -1,4 +1,5 @@
 <template>
+  <TitleBar />
   <div class="postlist">
     <div v-for="post in blogposts">
       <NuxtLink :to="post._path">
@@ -21,7 +22,8 @@
 definePageMeta({ documentDriven: false });
 // query blogposts
 const documents = await queryContent()
-  .where({ _partial: false }).sort({ date: 1 })
+  .where({ _partial: false })
+  .sort({ date: 1 })
   .sort({ date: 1 })
   .find();
 const blogposts = documents.filter(

@@ -38,7 +38,7 @@
   gap: var(--pad-size);
   background-color: var(--black);
   background-image: linear-gradient(
-    90deg,
+    135deg,
     var(--secondary-accent),
     var(--accent) 12.5%,
     var(--accent) 87.5%,
@@ -62,6 +62,7 @@
       -0.1em 0em 1em var(--secondary-accent);
     height: 100%;
     background-image: linear-gradient(
+      135deg,
       var(--secondary-accent),
       var(--accent) 12.5%,
       var(--accent) 87.5%,
