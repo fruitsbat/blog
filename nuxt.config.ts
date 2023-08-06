@@ -1,4 +1,5 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+
 export default defineNuxtConfig({
   experimental: {
     payloadExtraction: true,
@@ -12,7 +13,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "@vueuse/nuxt"],
   nitro: {
     prerender: {
       crawlLinks: true,

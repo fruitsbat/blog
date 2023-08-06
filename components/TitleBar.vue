@@ -45,6 +45,7 @@ h1 {
 }
 
 a:hover .rss-link-texture {
+  color: var(--white);
   @include animated-background;
 }
 

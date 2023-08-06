@@ -60,5 +60,9 @@ ul {
   font-size: var(--fs-regular);
 }
 
+body {
+  perspective: -500px;
+}
+
 @import "./animated_background.scss";
 @import "./shadows.scss";

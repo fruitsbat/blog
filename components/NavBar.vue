@@ -39,6 +39,7 @@ a {
 }
 
 a:hover {
+  color: var(--white);
   animation: animatedBackground 30s linear infinite;
 }
 
@@ -74,6 +75,14 @@ nav {
 
   a:hover > .icon-container {
     @include animated-background;
+  }
+
+  a:hover svg {
+    color: var(--white);
+  }
+
+  a:hover {
+    color: var(--black);
   }
 
   svg {
