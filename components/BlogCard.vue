@@ -1,4 +1,5 @@
 <template>
+  <span>{{computedX}} y: {{computedY}}</span>
   <NuxtLink :to="post._path">
     <div
       ref="target"
@@ -30,7 +31,7 @@ const computedX = computed(() => {
 });
 
 const computedY = computed(() => {
-  return `${(((elementY.value / height.value) - 0.5) * 48) * -1}deg`;
+  return `${(((elementY.value / height.value) - 0.5) * 48)}deg`;
 });
 </script>
 
@@ -89,7 +90,7 @@ a {
 }
 
 .postcard {
-  transition: transform 0.1s ease-out, filter 1s ease-out;
+  transition: filter 1s ease-out;
 }
 
 a:hover .postcard {
