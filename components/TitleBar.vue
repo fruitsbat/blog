@@ -1,7 +1,7 @@
 <template>
   <div class="titlebar-container">
     <div class="titlebar">
-      <h1>blog</h1>
+      <h1>weblog</h1>
       <a href="/index.xml" class="rss-link">
         <div class="rss-link-texture">
           <RssIcon class="icon" />
