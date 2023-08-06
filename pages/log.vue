@@ -9,9 +9,6 @@
           <div class="postcard-overlay">
             <div class="postcard-texture">
               <h2>{{ post.title }}</h2>
-              <span class="description">
-                {{ post.description }}
-              </span>
             </div>
           </div>
         </div></NuxtLink
@@ -49,12 +46,14 @@ const blogposts = documents.filter(
   background-size: cover;
   border-radius: var(--radius);
   @include drop-shadows;
+  min-height: 540px;
 }
 
 .postcard-overlay {
   background-color: var(--black-transparent);
   border-radius: var(--radius);
   height: 100%;
+  min-height: 540px;
 }
 
 .postcard-texture {
@@ -66,6 +65,7 @@ const blogposts = documents.filter(
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  min-height: 540px;
 }
 
 h2 {
@@ -74,16 +74,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.description {
-  width: 100%;
-  padding: var(--pad-size);
-  background-image: linear-gradient(transparent, var(--black));
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
-  color: var(--white);
-  @include text-shadows;
 }
 
 a:hover > * > * > .postcard-texture {

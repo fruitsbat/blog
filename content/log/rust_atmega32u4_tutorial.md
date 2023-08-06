@@ -4,6 +4,8 @@ title: "how to run rust code on a circuit playground classic / atmega32u4"
 image: "/img/blink.webp"
 ---
 
+## the plan
+
 this guide will show you how to get a simple **hello world blink example** working on **circuit playground classic**.
 if you have a regular **atmega32u4** (the microcontroller that powers the cicuit playground), or another board based on it you should also be able to follow along.
 

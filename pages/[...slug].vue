@@ -28,6 +28,11 @@ const { page, toc, next, prev } = useContent();
 
 <style scoped lang="scss">
 @import "@/assets/scss/shadows.scss";
+
+main {
+  color: var(--white);
+}
+
 .post-content {
   display: flex;
   flex-direction: column;
@@ -42,7 +47,7 @@ const { page, toc, next, prev } = useContent();
   background-repeat: no-repeat;
   background-size: cover;
   align-items: stretch;
-  min-height: 50vh;
+  min-height: 33vh;
   display: flex;
   color: var(--accent);
 }
@@ -77,8 +82,21 @@ ol {
   margin: var(--pad-size);
 }
 
+ol > li > a {
+  text-decoration: none;
+  color: var(--white);
+}
+
 @media (prefers-color-scheme: light) {
+  main {
+    color: var(--black);
+  }
+
   .post-content {
+    color: var(--black);
+  }
+
+  ol > li > a {
     color: var(--black);
   }
 }
