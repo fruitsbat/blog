@@ -21,8 +21,8 @@
 definePageMeta({ documentDriven: false });
 // query blogposts
 const documents = await queryContent()
-  .sort({ date: -1 })
-  .where({ _partial: false })
+  .where({ _partial: false }).sort({ date: 1 })
+  .sort({ date: 1 })
   .find();
 const blogposts = documents.filter(
   (doc) => doc?._path?.includes("/log") && !doc?._partial

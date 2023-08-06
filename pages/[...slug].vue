@@ -80,6 +80,7 @@ ol {
   list-style: decimal;
   list-style-position: inside;
   margin: var(--pad-size);
+  font-size: var(--fs-regular);
 }
 
 ol > li > a {
