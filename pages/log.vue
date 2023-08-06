@@ -106,6 +106,10 @@ h2 {
     flex-direction: column;
   }
 
+  .description {
+    font-size: var(--fs-small);
+  }
+
   h2 {
     font-size: var(--fs-large);
   }
