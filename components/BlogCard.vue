@@ -1,5 +1,4 @@
 <template>
-  <span>{{ computedX }}</span>
   <NuxtLink :to="post._path">
     <div
       ref="target"
