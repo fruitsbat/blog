@@ -46,14 +46,14 @@ const blogposts = documents.filter(
   background-size: cover;
   border-radius: var(--radius);
   @include drop-shadows;
-  min-height: 540px;
+  min-height: 320px;
 }
 
 .postcard-overlay {
   background-color: var(--black-transparent);
   border-radius: var(--radius);
   height: 100%;
-  min-height: 540px;
+  min-height: 320px;
 }
 
 .postcard-texture {
@@ -65,7 +65,7 @@ const blogposts = documents.filter(
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  min-height: 540px;
+  min-height: 320px;
 }
 
 h2 {
