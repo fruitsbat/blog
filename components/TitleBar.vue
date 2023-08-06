@@ -41,6 +41,7 @@ h1 {
   white-space: nowrap;
   color: var(--secondary-accent);
   gap: var(--pad-size-small);
+  @include text-shadows;
 }
 
 a:hover .rss-link-texture {
