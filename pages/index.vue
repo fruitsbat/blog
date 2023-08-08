@@ -91,7 +91,7 @@ definePageMeta({ documentDriven: false });
 <style scoped lang="scss">
 .intro-container {
   width: 100%;
-  min-height: calc(100% * calc(2 / 3));
+  height: calc(100% * calc(2 / 3));
   scroll-behavior: auto;
 }
 
