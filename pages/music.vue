@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <p>sdkfjksdjf</p>
-  </div>
+  <TitleBar title="music" />
 </template>
 
 <script setup lang="ts">

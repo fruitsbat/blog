@@ -1,5 +1,5 @@
 <template>
-  <TitleBar />
+  <TitleBar title="weblog"/>
   <div class="postlist">
     <div v-for="post in blogposts">
         <BlogCard :post="post" />

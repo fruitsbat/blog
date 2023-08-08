@@ -1,4 +1,5 @@
 <template>
+  <TitleBar title="home"/>
   <div class="intro-container">
     <TresCanvas :alpha="true" :use-legacy-lights="false" :antialias="false">
       <TresPerspectiveCamera />
@@ -9,7 +10,7 @@
         :max-polar-angle="1.2"
         :min-polar-angle="1.2"
       ></OrbitControls>
-      <Levioso :float-factor="5" :rotation-factor="3" :speed="0.5">
+      <Levioso :float-factor="4" :rotation-factor="4" :speed="0.5">
         <TresMesh ref="modelRef">
           <TresBoxGeometry />
           <TresMeshNormalMaterial />
@@ -90,7 +91,7 @@ definePageMeta({ documentDriven: false });
 <style scoped lang="scss">
 .intro-container {
   width: 100%;
-  height: 100%;
+  min-height: calc(100% / 3);
   scroll-behavior: auto;
 }
 
