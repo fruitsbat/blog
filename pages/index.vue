@@ -1,5 +1,5 @@
 <template>
-  <TitleBar title="home"/>
+  <TitleBar title="home" />
   <div class="intro-container">
     <TresCanvas :alpha="true" :use-legacy-lights="false" :antialias="false">
       <TresPerspectiveCamera />
@@ -82,8 +82,8 @@
 import { TresCanvas } from "@tresjs/core";
 
 useHead({
-  title: "zoe bat website"
-})
+  title: "zoe bat website",
+});
 
 definePageMeta({ documentDriven: false });
 </script>
@@ -91,7 +91,7 @@ definePageMeta({ documentDriven: false });
 <style scoped lang="scss">
 .intro-container {
   width: 100%;
-  min-height: calc(100% / 3);
+  min-height: calc(100% * calc(2 / 3));
   scroll-behavior: auto;
 }
 
