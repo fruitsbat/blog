@@ -21,5 +21,8 @@
     "sass": "^1.64.2",
     "sass-loader": "^13.3.2",
     "three": "^0.155.0"
+  },
+  "dependencies": {
+    "@tresjs/cientos": "^3.0.1"
   }
 }
