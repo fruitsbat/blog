@@ -1,6 +1,6 @@
 <template>
   <div class="intro-container">
-    <TresCanvas class="model">
+    <TresCanvas :alpha="true" :use-legacy-lights="false" :antialias="false">
       <TresPerspectiveCamera />
       <TresMesh>
         <TresBoxGeometry />
@@ -8,10 +8,7 @@
       </TresMesh>
     </TresCanvas>
   </div>
-  <p>
-    hehe ksdjfksdjf <br />
-    <br />
-  </p>
+  <ProseH2 :id="'meow'">meow</ProseH2>
 </template>
 
 <script setup lang="ts">
