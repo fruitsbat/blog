@@ -2,7 +2,8 @@
   <div class="intro-container">
     <TresCanvas :alpha="true" :use-legacy-lights="false" :antialias="false">
       <TresPerspectiveCamera />
-      <Levioso>
+      <OrbitControls :enable-zoom="false" :enable-pan="false" :enable-damping="true" :max-polar-angle="1.2"/>
+      <Levioso :float-factor="5">
         <TresMesh ref="modelRef">
           <TresBoxGeometry />
           <TresMeshNormalMaterial />
