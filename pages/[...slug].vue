@@ -12,6 +12,7 @@
         </div>
       </div>
       <ol>
+        <ProseH2 id="toc">outline</ProseH2>
         <li v-for="heading in toc.links">
           <a :href="`#${heading.id}`">{{ heading.text ?? "no heading" }}</a>
         </li>
