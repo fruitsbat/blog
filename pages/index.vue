@@ -3,6 +3,8 @@
     <TresCanvas class="model">
       <TresPerspectiveCamera />
       <OrbitControls />
+      <Smoke />
+      <Stars />
       <TresMesh>
         <TresSphereGeometry />
         <TresMeshNormalMaterial />
