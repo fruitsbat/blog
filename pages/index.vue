@@ -2,13 +2,12 @@
   <div class="intro-container">
     <TresCanvas class="model">
       <TresPerspectiveCamera />
-      <OrbitControls />
-      <Smoke />
-      <Stars />
-      <TresMesh>
-        <TresSphereGeometry />
-        <TresMeshNormalMaterial />
-      </TresMesh>
+      <Levioso>
+        <TresMesh>
+          <TresSphereGeometry />
+          <TresMeshNormalMaterial />
+        </TresMesh>
+      </Levioso>
     </TresCanvas>
   </div>
   <p>
