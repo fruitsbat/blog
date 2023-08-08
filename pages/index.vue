@@ -9,7 +9,7 @@
         :max-polar-angle="1.2"
         :min-polar-angle="1.2"
       ></OrbitControls>
-      <Levioso :float-factor="5">
+      <Levioso :float-factor="5" :rotation-factor="3" :speed="0.5">
         <TresMesh ref="modelRef">
           <TresBoxGeometry />
           <TresMeshNormalMaterial />
@@ -79,6 +79,10 @@
 
 <script setup lang="ts">
 import { TresCanvas } from "@tresjs/core";
+
+useHead({
+  title: "zoe bat website"
+})
 
 definePageMeta({ documentDriven: false });
 </script>

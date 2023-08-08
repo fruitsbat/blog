@@ -9,6 +9,9 @@
 
 <script setup lang="ts">
 definePageMeta({ documentDriven: false });
+useHead({
+  title: "weblog"
+})
 // query blogposts
 const documents = await queryContent()
   .where({ _partial: false })
