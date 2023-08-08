@@ -2,12 +2,11 @@
   <div class="intro-container">
     <TresCanvas class="model">
       <TresPerspectiveCamera />
-      <Levioso>
+      <OrbitControls :auto-rotate="true" enable-pan="false"/>
         <TresMesh>
-          <TresSphereGeometry />
+          <TresBoxGeometry />
           <TresMeshNormalMaterial />
         </TresMesh>
-      </Levioso>
     </TresCanvas>
   </div>
   <p>
