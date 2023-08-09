@@ -3,7 +3,6 @@
 </template>
 
 <script setup lang="ts">
-import { mode } from "process";
 import * as THREE from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 </script>
@@ -36,7 +35,7 @@ export default {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(1 / (width / 50));
+      renderer.setPixelRatio(1 / (width / 75));
     }
 
     var model;
