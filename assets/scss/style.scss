@@ -64,5 +64,9 @@ body {
   perspective: -500px;
 }
 
+canvas {
+  touch-action: pan-y !important;
+}
+
 @import "./animated_background.scss";
 @import "./shadows.scss";
