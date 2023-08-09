@@ -117,7 +117,8 @@ definePageMeta({ documentDriven: false });
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
   }
 }
 </style>

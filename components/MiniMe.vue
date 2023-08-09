@@ -79,10 +79,9 @@ export default {
 @import "~/assets/scss/shadows.scss";
 
 canvas {
+  min-width: 100%;
   aspect-ratio: 1/1;
-  width: 100%;
   image-rendering: pixelated;
-  display: flex;
   filter: drop-shadow(var(--fs-xl) 0 2em var(--secondary-accent))
       drop-shadow(calc(var(--fs-xl) * -1) 0 2em var(--ternary-accent));
 }
