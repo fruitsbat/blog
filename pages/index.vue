@@ -1,9 +1,14 @@
 <template>
   <TitleBar title="home" />
   <div class="intro-container">
+    <div class="model-3d">
     <ClientOnly>
-      <MiniMe />
+      <MiniMe class="mini-me" />
     </ClientOnly>
+    </div>
+    <ProseH2 id="about-me">
+      about me
+    </ProseH2>
   </div>
 
   <ProseH2 :id="'meow'">meow</ProseH2>
@@ -75,12 +80,35 @@ definePageMeta({ documentDriven: false });
 
 <style scoped lang="scss">
 .intro-container {
+  display: flex;
   width: 100%;
   height: calc(100% * calc(2 / 3));
   scroll-behavior: auto;
+  gap: var(--pad-size);
+  flex-direction: row;
+}
+
+.model-3d {
+  flex-grow: 2;
+  aspect-ratio: 1/1;
+}
+
+#about-me {
+  padding: var(--pad-size);
+  flex-grow: 1;
 }
 
 .overlay {
   position: absolute;
+}
+
+@media screen and (max-width: 720px) {
+  #about-me {
+    flex-grow: 2;
+  }
+
+  .model-3d {
+    flex-grow: 1;
+  }
 }
 </style>

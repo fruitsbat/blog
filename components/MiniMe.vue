@@ -21,7 +21,7 @@ export default {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(1 / (width / 150 ));
+      renderer.setPixelRatio(0.1);
     }
 
     const scene = new THREE.Scene();
@@ -60,5 +60,6 @@ canvas {
   width: 100%;
   height: 100%;
   image-rendering: pixelated;
+  display: block;
 }
 </style>
