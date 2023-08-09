@@ -35,7 +35,7 @@ export default {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(1 / (width / 100));
+      renderer.setPixelRatio(1 / (width / 75));
     }
 
     var model;
@@ -64,7 +64,7 @@ export default {
     function animate() {
       if (model!) {
         model.rotation.y += 0.01;
-        model.rotation.x += Math.sin(model.rotation.y + 1) / 150;
+        model.rotation.x += Math.sin(model.rotation.y + 2) / 200;
       }
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
@@ -80,6 +80,7 @@ export default {
 @import "~/assets/scss/shadows.scss";
 
 canvas {
+  height: 100%;
   min-width: 100%;
   aspect-ratio: 1/1;
   image-rendering: pixelated;

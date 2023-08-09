@@ -7,7 +7,12 @@
           <MiniMe class="mini-me" />
         </ClientOnly>
       </div>
-      <ProseH2 id="about-me"> about me </ProseH2>
+      <div>
+        <ProseH2 id="about-me"> about me </ProseH2>
+        <ProseH3 id="love-to-spin"
+          >i love to spin around on this website</ProseH3
+        >
+      </div>
     </div>
   </div>
 
@@ -92,9 +97,12 @@ definePageMeta({ documentDriven: false });
   aspect-ratio: 1/1;
 }
 
-#about-me {
+.about-me {
+  display: flex;
+  flex-direction: column;
   padding: var(--pad-size);
   flex-grow: 1;
+  padding: var(--pad-size);
 }
 
 .overlay {
