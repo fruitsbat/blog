@@ -17,13 +17,15 @@ export default {
     const scene = new THREE.Scene();
 
     // set up light
-    const ambientLight = new THREE.AmbientLight(0xffffff);
-    scene.add(ambientLight);
-
-    const rightLight = new THREE.PointLight(0xfff000);
-    rightLight.position.set(20, 20, 20);
-
+    const rightLight = new THREE.PointLight(0xd1aaf0);
+    rightLight.position.set(5, 0, 5);
+    rightLight.intensity = 200;
     scene.add(rightLight);
+
+    const leftLight = new THREE.PointLight(0xf0d1aa);
+    leftLight.position.set(-5, 0, 5);
+    leftLight.intensity = 200;
+    scene.add(leftLight);
 
 
 
@@ -35,7 +37,7 @@ export default {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(1 / (width / 75));
+      renderer.setPixelRatio(1 / (width / 200));
     }
 
     var model;
@@ -43,6 +45,7 @@ export default {
       "/models/minime.gltf",
       function (gltf) {
         model = gltf.scene;
+        gltf.scene.rotation.y = 180;
         scene.add(gltf.scene);
       }
     );
@@ -63,12 +66,13 @@ export default {
     function animate() {
       if (model!) {
         model.rotation.y += 0.01;
-        model.rotation.x += 0.005;
+        model.rotation.x += Math.sin(model.rotation.y + 0.1) / 150;
       }
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
 
+    resizeCanvas();
     animate();
   },
 };
