@@ -28,6 +28,7 @@ export default {
     controls.maxPolarAngle = 1.3;
     controls.minPolarAngle = 1.3;
     controls.rotateSpeed = 5;
+    controls.enablePan = false;
 
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
