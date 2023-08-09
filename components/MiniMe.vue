@@ -5,6 +5,7 @@
 <script setup lang="ts">
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 </script>
 
 <script lang="ts">
@@ -15,6 +16,17 @@ export default {
     const camera = new THREE.PerspectiveCamera(10);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas ?? undefined });
     const scene = new THREE.Scene();
+    const controls = new OrbitControls(camera, renderer.domElement);
+    const clock = new THREE.Clock(); 
+
+    // set up controls
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 10;
+    controls.dampingFactor = 0.01;
+    controls.enableDamping = true;
+    controls.enableZoom = false;
+    controls.maxPolarAngle = 1.3;
+    controls.minPolarAngle = 1.3;
 
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
@@ -41,7 +53,7 @@ export default {
     var model;
     loader.load("/models/minime.gltf", function (gltf) {
       model = gltf.scene;
-      gltf.scene.rotation.y = -3;
+      gltf.scene.rotation.y = -2;
       model.traverse((child) => {
         const c = child as THREE.Mesh;
         if (c.isMesh)
@@ -67,10 +79,10 @@ export default {
 
     function animate() {
       if (model!) {
-        model.rotation.y -= 0.03;
-        model.rotation.x = Math.sin(model.rotation.x - 0.5) / 3;
-        model.rotation.z = Math.sin(model.rotation.z - 0.2) / 3;
+        model.rotation.x = Math.sin(clock.getElapsedTime() + 1) / 3;
+        model.rotation.z = Math.cos(clock.getElapsedTime()) / 2;
       }
+      controls.update();
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
