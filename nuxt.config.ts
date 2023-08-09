@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ["@nuxt/content", "@vueuse/nuxt", "@tresjs/nuxt"],
+  modules: ["@nuxt/content", "@vueuse/nuxt"],
   nitro: {
     prerender: {
       crawlLinks: true,

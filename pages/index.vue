@@ -1,22 +1,9 @@
 <template>
   <TitleBar title="home" />
   <div class="intro-container">
-    <TresCanvas :alpha="true" :use-legacy-lights="false" :antialias="false">
-      <TresPerspectiveCamera />
-      <OrbitControls
-        :enable-zoom="false"
-        :enable-pan="false"
-        :enable-damping="true"
-        :max-polar-angle="1.2"
-        :min-polar-angle="1.2"
-      ></OrbitControls>
-      <Levioso :float-factor="4" :rotation-factor="4" :speed="0.5">
-        <TresMesh ref="modelRef">
-          <TresBoxGeometry />
-          <TresMeshNormalMaterial />
-        </TresMesh>
-      </Levioso>
-    </TresCanvas>
+    <ClientOnly>
+      <MiniMe />
+    </ClientOnly>
   </div>
 
   <ProseH2 :id="'meow'">meow</ProseH2>
@@ -79,8 +66,6 @@
 </template>
 
 <script setup lang="ts">
-import { TresCanvas } from "@tresjs/core";
-
 useHead({
   title: "zoe bat website",
 });
