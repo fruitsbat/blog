@@ -2,13 +2,13 @@
   <canvas id="minime-canvas"></canvas>
 </template>
 
-<script setup lang="ts">
+<script setup lang="js">
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 </script>
 
-<script lang="ts">
+<script lang="js">
 export default {
   mounted() {
     const loader = new GLTFLoader();
@@ -27,6 +27,7 @@ export default {
     controls.enableZoom = false;
     controls.maxPolarAngle = 1.3;
     controls.minPolarAngle = 1.3;
+    controls.rotateSpeed = 5;
 
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
@@ -39,15 +40,16 @@ export default {
     leftLight.intensity = 100;
     scene.add(leftLight);
 
+
     function resizeCanvas() {
-      const width = canvas?.clientWidth!;
-      const height = canvas?.clientHeight!;
+      const width = canvas?.clientWidth;
+      const height = canvas?.clientHeight;
 
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(1 / (width / 75));
+      renderer.setPixelRatio(1 / (width / 200));
     }
 
     var model;
@@ -55,11 +57,10 @@ export default {
       model = gltf.scene;
       gltf.scene.rotation.y = -2;
       model.traverse((child) => {
-        const c = child as THREE.Mesh;
-        if (c.isMesh)
-          c.material = new THREE.MeshToonMaterial({
-            map: c.map,
-            color: c.material.color,
+        if (child.isMesh)
+          child.material = new THREE.MeshToonMaterial({
+            map: child.map,
+            color: child.material.color,
           });
       });
       scene.add(gltf.scene);
@@ -75,10 +76,10 @@ export default {
     resizeCanvas();
 
     const resizeObserver = new ResizeObserver(resizeCanvas);
-    resizeObserver.observe(canvas!);
+    resizeObserver.observe(canvas);
 
     function animate() {
-      if (model!) {
+      if (model) {
         model.rotation.x = Math.sin(clock.getElapsedTime() + 1) / 3;
         model.rotation.z = Math.cos(clock.getElapsedTime()) / 2;
       }
@@ -97,6 +98,7 @@ export default {
 @import "~/assets/scss/shadows.scss";
 
 canvas {
+  overflow: scroll;
   height: 100%;
   min-width: 100%;
   aspect-ratio: 1/1;
