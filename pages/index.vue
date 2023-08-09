@@ -7,7 +7,7 @@
           <MiniMe class="mini-me" />
         </ClientOnly>
       </div>
-      <div>
+      <div class="about-me">
         <ProseH2 id="about-me"> about me </ProseH2>
         <ProseH3 id="love-to-spin"
           >i love to spin around on this website</ProseH3
