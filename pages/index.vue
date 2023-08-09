@@ -1,14 +1,14 @@
 <template>
-  <TitleBar title="home" />
-  <div class="intro-container">
-    <div class="model-3d">
-    <ClientOnly>
-      <MiniMe class="mini-me" />
-    </ClientOnly>
+  <div>
+    <TitleBar title="home" />
+    <div class="intro-container">
+      <div class="model-3d">
+        <ClientOnly>
+          <MiniMe class="mini-me" />
+        </ClientOnly>
+      </div>
+      <ProseH2 id="about-me"> about me </ProseH2>
     </div>
-    <ProseH2 id="about-me">
-      about me
-    </ProseH2>
   </div>
 
   <ProseH2 :id="'meow'">meow</ProseH2>
@@ -82,7 +82,6 @@ definePageMeta({ documentDriven: false });
 .intro-container {
   display: flex;
   width: 100%;
-  height: calc(100% * calc(2 / 3));
   scroll-behavior: auto;
   gap: var(--pad-size);
   flex-direction: row;
@@ -102,13 +101,22 @@ definePageMeta({ documentDriven: false });
   position: absolute;
 }
 
-@media screen and (max-width: 720px) {
-  #about-me {
-    flex-grow: 2;
+@media screen and (max-width: 1280px) {
+  .intro-container {
+    display: flex;
+  }
+  .intro-container {
+    flex-direction: column;
+  }
+
+  .mini-me {
+    max-width: calc(100vh / 3);
   }
 
   .model-3d {
-    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
