@@ -66,7 +66,7 @@ export default {
     function animate() {
       if (model!) {
         model.rotation.y += 0.01;
-        model.rotation.x += Math.sin(model.rotation.y + 0.1) / 150;
+        model.rotation.x += Math.sin(model.rotation.y + 1) / 150;
       }
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
