@@ -4,14 +4,28 @@
 
 <script setup lang="ts">
 import * as THREE from "three";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 </script>
 
 <script lang="ts">
 export default {
   mounted() {
+    const loader = new GLTFLoader();
     const canvas = document.getElementById("minime-canvas");
     const camera = new THREE.PerspectiveCamera(10);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas ?? undefined });
+    const scene = new THREE.Scene();
+
+    // set up light
+    const ambientLight = new THREE.AmbientLight(0xffffff);
+    scene.add(ambientLight);
+
+    const rightLight = new THREE.PointLight(0xfff000);
+    rightLight.position.set(20, 20, 20);
+
+    scene.add(rightLight);
+
+
 
     function resizeCanvas() {
       const width = canvas?.clientWidth!;
@@ -24,17 +38,20 @@ export default {
       renderer.setPixelRatio(0.1);
     }
 
-    const scene = new THREE.Scene();
+    loader.load(
+      "/models/minime.gltf",
+      function (gltf) {
+        scene.add(gltf.scene);
+      }
+    );
 
     renderer.setPixelRatio(0.2);
     renderer.setClearAlpha(0.0);
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
 
     camera.position.z = 20;
+
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
 
     resizeCanvas();
 
@@ -43,10 +60,6 @@ export default {
 
     function animate() {
       requestAnimationFrame(animate);
-
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-
       renderer.render(scene, camera);
     }
 
@@ -60,7 +73,6 @@ export default {
 
 canvas {
   width: 100%;
-  height: 100%;
   image-rendering: pixelated;
   display: flex;
   filter: drop-shadow(var(--fs-xl) 0 2em var(--secondary-accent))
