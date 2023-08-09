@@ -44,8 +44,12 @@ export default {
       gltf.scene.rotation.y = -3;
       model.traverse((child) => {
         const c = child as THREE.Mesh;
-        if (c.isMesh) c.material = new THREE.MeshToonMaterial({map: c.map, color:c.material.color});
-      })
+        if (c.isMesh)
+          c.material = new THREE.MeshToonMaterial({
+            map: c.map,
+            color: c.material.color,
+          });
+      });
       scene.add(gltf.scene);
     });
 
@@ -63,9 +67,9 @@ export default {
 
     function animate() {
       if (model!) {
-        model.rotation.y -= 0.05;
-        model.rotation.x = Math.sin(model.rotation.x - 2);
-        model.rotation.z = Math.sin(model.rotation.z + 4);
+        model.rotation.y -= 0.03;
+        model.rotation.x = Math.sin(model.rotation.x - 0.5) / 3;
+        model.rotation.z = Math.sin(model.rotation.z - 0.2) / 3;
       }
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
