@@ -35,13 +35,13 @@ export default {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(1 / (width / 200));
+      renderer.setPixelRatio(1 / (width / 100));
     }
 
     var model;
     loader.load("/models/minime.gltf", function (gltf) {
       model = gltf.scene;
-      gltf.scene.rotation.y = 180;
+      gltf.scene.rotation.y = -3;
       model.traverse((child) => {
         const c = child as THREE.Mesh;
         if (c.isMesh) c.material = new THREE.MeshToonMaterial({map: c.map, color:c.material.color});
