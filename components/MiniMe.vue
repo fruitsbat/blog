@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+import { mode } from "process";
 import * as THREE from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 </script>
@@ -35,17 +36,19 @@ export default {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(0.1);
+      renderer.setPixelRatio(1 / (width / 50));
     }
 
+    var model;
     loader.load(
       "/models/minime.gltf",
       function (gltf) {
+        model = gltf.scene;
         scene.add(gltf.scene);
       }
     );
 
-    renderer.setPixelRatio(0.2);
+    renderer.setPixelRatio(0.1);
     renderer.setClearAlpha(0.0);
 
 
@@ -59,6 +62,10 @@ export default {
     resizeObserver.observe(canvas!);
 
     function animate() {
+      if (model!) {
+        model.rotation.y += 0.01;
+        model.rotation.x += 0.005;
+      }
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
@@ -72,6 +79,7 @@ export default {
 @import "~/assets/scss/shadows.scss";
 
 canvas {
+  aspect-ratio: 1/1;
   width: 100%;
   image-rendering: pixelated;
   display: flex;
