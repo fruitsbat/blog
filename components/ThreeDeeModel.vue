@@ -6,7 +6,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useMousePressed, useMouseInElement } from "@vueuse/core";
-import { ref } from 'vue';
 </script>
 
 <script lang="js">
@@ -24,10 +23,8 @@ export default {
     const scene = new THREE.Scene();
     const clock = new THREE.Clock();
 
-    const canvasRef = ref(null);
     const pressed = useMousePressed({ target: canvas });
     const mouseInElement = useMouseInElement(canvas);
-    console.log(canvasRef.value);
 
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
