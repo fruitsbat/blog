@@ -71,6 +71,7 @@ a:hover .rss-link-texture {
     var(--secondary-accent) 87.5%,
     var(--accent)
   );
+  z-index: 1000;
   @include drop-shadows;
 }
 
