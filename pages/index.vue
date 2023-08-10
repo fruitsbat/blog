@@ -15,8 +15,11 @@
           to answer.
         </ProseP>
         <ProseP
-          ><ProseStrong>i love to spin around on this website</ProseStrong> but
-          can enjoy other things too.</ProseP
+          ><ProseStrong
+            >i'm zoe, a 22 year old university student from hamburg. i love to
+            spin around on this website</ProseStrong
+          >
+          but can enjoy other things too.</ProseP
         >
         <ProseP>
           these include but are not limited to:
@@ -41,7 +44,9 @@
           >. generally i will answer faster on matrix.
         </ProseP>
         <ProseP>
-          this page is part of the <ProseA href="https://ring.bicompact.space/">armisael webring</ProseA>. check it out!
+          this page is part of the
+          <ProseA href="https://ring.bicompact.space/">armisael webring</ProseA
+          >. check it out!
         </ProseP>
       </div>
     </div>
