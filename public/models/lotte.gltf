@@ -3,6 +3,11 @@
 		"generator":"Khronos glTF Blender I/O v3.5.30",
 		"version":"2.0"
 	},
+	"extensionsUsed":[
+		"KHR_materials_clearcoat",
+		"KHR_materials_specular",
+		"KHR_materials_ior"
+	],
 	"scene":0,
 	"scenes":[
 		{
@@ -130,6 +135,22 @@
 		},
 		{
 			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_clearcoat":{
+					"clearcoatFactor":1,
+					"clearcoatRoughnessFactor":0.029999999329447746
+				},
+				"KHR_materials_specular":{
+					"specularColorFactor":[
+						3.368776690396682,
+						0.20507986845925463,
+						0.5199787902614165
+					]
+				},
+				"KHR_materials_ior":{
+					"ior":1.4500000476837158
+				}
+			},
 			"name":"Hair",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
@@ -139,7 +160,7 @@
 					1
 				],
 				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"roughnessFactor":0
 			}
 		}
 	],
