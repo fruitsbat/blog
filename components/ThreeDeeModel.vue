@@ -29,12 +29,12 @@ export default {
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
     rightLight.position.set(5, 5, 5);
-    rightLight.intensity = 200;
+    rightLight.intensity = 100;
     scene.add(rightLight);
 
-    const leftLight = new THREE.PointLight(0xf0d1aa);
+    const leftLight = new THREE.PointLight(0xaaf0d1);
     leftLight.position.set(-5, 0, 5);
-    leftLight.intensity = 200;
+    leftLight.intensity = 150;
     scene.add(leftLight);
 
 
