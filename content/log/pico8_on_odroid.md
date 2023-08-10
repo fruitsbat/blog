@@ -9,7 +9,7 @@ go to [itch.io](https://lexaloffle.itch.io/pico-8) and download the raspi versio
 pico-8 was in the blm bundle that everyone has, you probably already own it.
 
 ## put it in your roms folder
-now extract the contents of the folder called `pico-8` into the roms folder on your sd card.
+now extract the contents of the folder called `pico-8` into the `pico-8` roms folder on your sd card.
 
 not the bios folder...
 i struggled with this...
