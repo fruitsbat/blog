@@ -87,8 +87,9 @@ export default {
       }
 
       if (!mouseInElement.isOutside.value && pressed.pressed.value) {
-        const towards = ((mouseInElement.elementX.value - lastX) * 2) / mouseInElement.elementWidth.value;
+        const towards = ((mouseInElement.elementX.value - lastX) * 10) / mouseInElement.elementWidth.value;
         rotationSpeed = lerp(rotationSpeed, towards, 0.1);
+        lastX = mouseInElement.elementX.value;
       } else {
         lastX = null;
         rotationSpeed = lerp(rotationSpeed, 0.01, 0.01);
