@@ -52,7 +52,7 @@ export default {
       renderer.setPixelRatio(1 / (width / 200));
     }
 
-    const model = await loader.loadAsync("/models/minime.gltf");
+    const model = await loader.loadAsync(this.file);
     model.scene.traverse((child) => {
       if (child.isMesh) {
         child.material = new THREE.MeshToonMaterial({
