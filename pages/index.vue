@@ -4,7 +4,7 @@
     <div class="intro-container">
       <div class="model-3d">
         <ClientOnly>
-          <ThreeDeeModel class="mini-me" />
+          <ThreeDeeModel file="/models/minime.gltf" class="mini-me" />
         </ClientOnly>
       </div>
       <div class="about-me">

@@ -7,17 +7,15 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useMousePressed, useMouseInElement } from "@vueuse/core";
 import { ref } from 'vue';
-
-defineProps({
-  file: String,
-})
-
 </script>
 
 <script lang="js">
 const lerp = (x, y, a) => x * (1 - a) + y * a;
 
 export default {
+  props: {
+    file: String,
+  },
   async mounted() {
     const loader = new GLTFLoader();
     const canvas = document.getElementById("minime-canvas");
@@ -34,7 +32,7 @@ export default {
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
     rightLight.position.set(5, 5, 5);
-    rightLight.intensity = 200;
+    rightLight.intensity = 600;
     scene.add(rightLight);
 
     const leftLight = new THREE.PointLight(0xf0d1aa);
