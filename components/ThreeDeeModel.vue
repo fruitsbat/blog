@@ -91,7 +91,7 @@ export default {
         rotationSpeed = lerp(rotationSpeed, towards, 0.1);
       } else {
         lastX = null;
-        rotationSpeed = lerp(rotationSpeed, 0, 0.01);
+        rotationSpeed = lerp(rotationSpeed, 0.01, 0.01);
       }
 
       model.scene.rotation.y += rotationSpeed;
