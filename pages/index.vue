@@ -14,9 +14,12 @@
           <ProseStrong>you</ProseStrong> would like to know who i am i am happy
           to answer.
         </ProseP>
+        <ProseP>
+        i'm <ProseString>zoe</ProseString>, a <ProseStrong>22</ProseStrong> year old university student from <ProseStrong>hamburg</ProseStrong>.
+        </ProseP>
         <ProseP
           ><ProseStrong
-            >i'm zoe, a 22 year old university student from hamburg. i love to
+            >i love to
             spin around on this website</ProseStrong
           >
           but can enjoy other things too.</ProseP
