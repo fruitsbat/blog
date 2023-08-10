@@ -1,44 +1,45 @@
 <template>
-  <canvas id="minime-canvas"></canvas>
+  <canvas ref="canvasRef" id="minime-canvas"></canvas>
 </template>
 
 <script setup lang="js">
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { useMousePressed, useMouseInElement } from "@vueuse/core";
+import { ref } from 'vue';
+
+defineProps({
+  file: String,
+})
+
 </script>
 
 <script lang="js">
+const lerp = (x, y, a) => x * (1 - a) + y * a;
+
 export default {
-  mounted() {
+  async mounted() {
     const loader = new GLTFLoader();
     const canvas = document.getElementById("minime-canvas");
     const camera = new THREE.PerspectiveCamera(10);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas ?? undefined });
     const scene = new THREE.Scene();
-    const controls = new OrbitControls(camera, renderer.domElement);
-    const clock = new THREE.Clock(); 
+    const clock = new THREE.Clock();
 
-    // set up controls
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 10;
-    controls.dampingFactor = 0.01;
-    controls.enableDamping = true;
-    controls.enableZoom = false;
-    controls.maxPolarAngle = 1.3;
-    controls.minPolarAngle = 1.3;
-    controls.rotateSpeed = 5;
-    controls.enablePan = false;
+    const canvasRef = ref(null);
+    const pressed = useMousePressed({ target: canvas });
+    const mouseInElement = useMouseInElement(canvas);
+    console.log(canvasRef.value);
 
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
-    rightLight.position.set(5, 0, 5);
-    rightLight.intensity = 100;
+    rightLight.position.set(5, 5, 5);
+    rightLight.intensity = 200;
     scene.add(rightLight);
 
     const leftLight = new THREE.PointLight(0xf0d1aa);
     leftLight.position.set(-5, 0, 5);
-    leftLight.intensity = 100;
+    leftLight.intensity = 200;
     scene.add(leftLight);
 
 
@@ -53,19 +54,17 @@ export default {
       renderer.setPixelRatio(1 / (width / 200));
     }
 
-    var model;
-    loader.load("/models/minime.gltf", function (gltf) {
-      model = gltf.scene;
-      gltf.scene.rotation.y = -2;
-      model.traverse((child) => {
-        if (child.isMesh)
-          child.material = new THREE.MeshToonMaterial({
-            map: child.map,
-            color: child.material.color,
-          });
-      });
-      scene.add(gltf.scene);
-    });
+    const model = await loader.loadAsync("/models/minime.gltf");
+    model.scene.traverse((child) => {
+      if (child.isMesh) {
+        child.material = new THREE.MeshToonMaterial({
+          map:  child.map != undefined? child.map : null,
+          color: child.material.color,
+        });
+        scene.add(model.scene);
+      }
+    })
+    model.scene.rotation.y = -1;
 
     renderer.setPixelRatio(0.1);
     renderer.setClearAlpha(0.0);
@@ -79,12 +78,28 @@ export default {
     const resizeObserver = new ResizeObserver(resizeCanvas);
     resizeObserver.observe(canvas);
 
+    let rotationSpeed = 0;
+
+    // where the mouse was first held
+    let lastX = null;
+
     function animate() {
-      if (model) {
-        model.rotation.x = Math.sin(clock.getElapsedTime() + 1) / 3;
-        model.rotation.z = Math.cos(clock.getElapsedTime()) / 2;
+      if (lastX === null) {
+        lastX = mouseInElement.elementX.value;
       }
-      controls.update();
+
+      if (!mouseInElement.isOutside.value && pressed.pressed.value) {
+        const towards = ((mouseInElement.elementX.value - lastX) * 2) / mouseInElement.elementWidth.value;
+        rotationSpeed = lerp(rotationSpeed, towards, 0.1);
+      } else {
+        lastX = null;
+        rotationSpeed = lerp(rotationSpeed, 0, 0.01);
+      }
+
+      model.scene.rotation.y += rotationSpeed;
+      model.scene.rotation.x = Math.sin(clock.getElapsedTime() + 1) / 3;
+      model.scene.rotation.z = Math.cos(clock.getElapsedTime()) / 2;
+
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }

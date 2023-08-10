@@ -4,7 +4,7 @@
     <div class="intro-container">
       <div class="model-3d">
         <ClientOnly>
-          <MiniMe class="mini-me" />
+          <ThreeDeeModel class="mini-me" />
         </ClientOnly>
       </div>
       <div class="about-me">
