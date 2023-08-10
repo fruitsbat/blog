@@ -76,7 +76,7 @@ export default {
     const resizeObserver = new ResizeObserver(resizeCanvas);
     resizeObserver.observe(canvas);
 
-    let rotationSpeed = 0;
+    let rotationSpeed = 0.01;
 
     // where the mouse was first held
     let lastX = null;
