@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvasRef" id="minime-canvas"></canvas>
+  <canvas ref="canvasRef" :id="`three-dee-canvas-${file}`"></canvas>
 </template>
 
 <script setup lang="js">
@@ -17,7 +17,7 @@ export default {
   },
   async mounted() {
     const loader = new GLTFLoader();
-    const canvas = document.getElementById("minime-canvas");
+    const canvas = document.getElementById(`three-dee-canvas-${this.file}`);
     const camera = new THREE.PerspectiveCamera(10);
     const renderer = new THREE.WebGLRenderer({ canvas: canvas ?? undefined });
     const scene = new THREE.Scene();
@@ -29,7 +29,7 @@ export default {
     // set up light
     const rightLight = new THREE.PointLight(0xd1aaf0);
     rightLight.position.set(5, 5, 5);
-    rightLight.intensity = 600;
+    rightLight.intensity = 200;
     scene.add(rightLight);
 
     const leftLight = new THREE.PointLight(0xf0d1aa);
@@ -111,6 +111,7 @@ export default {
 
 canvas {
   overflow: scroll;
+  width: 100%;
   height: 100%;
   min-width: 100%;
   aspect-ratio: 1/1;

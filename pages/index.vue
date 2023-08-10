@@ -14,6 +14,9 @@
         >
       </div>
     </div>
+    <ClientOnly>
+      <ThreeDeeModel file="/models/lotte.gltf"/>
+    </ClientOnly>
   </div>
 
   <ProseH2 :id="'meow'">meow</ProseH2>
