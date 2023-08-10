@@ -14,5 +14,5 @@ now extract the contents of the folder called `pico-8` into the `pico-8` roms fo
 not the bios folder...
 i struggled with this...
 
-## it works now congratulations
+## it works now, congratulations
 play the games. you love the games.
