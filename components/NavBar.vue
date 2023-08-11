@@ -12,11 +12,15 @@
       ><div class="icon-container"><MusicalNoteIcon /></div>
       music</NuxtLink
     >
+    <NuxtLink to="/code"
+      ><div class="icon-container"><CodeBracketIcon /></div>
+      code</NuxtLink
+    >
   </nav>
 </template>
 
 <script setup lang="ts">
-import { HomeIcon, RssIcon, MusicalNoteIcon } from "@heroicons/vue/24/solid";
+import { HomeIcon, RssIcon, MusicalNoteIcon, CodeBracketIcon } from "@heroicons/vue/24/solid";
 </script>
 
 <style scoped lang="scss">
@@ -109,6 +113,7 @@ nav {
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
+    align-items: stretch;
   }
   a {
     line-break: strict;
