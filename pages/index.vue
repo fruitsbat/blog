@@ -127,7 +127,7 @@ definePageMeta({ documentDriven: false });
   position: absolute;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 640px) {
   .intro-container.contact-container {
     flex-direction: column-reverse;
   }
