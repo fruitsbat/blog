@@ -12,9 +12,9 @@
       ><div class="icon-container"><MusicalNoteIcon /></div>
       music</NuxtLink
     >
-    <NuxtLink to="/code"
+    <NuxtLink to="/projects"
       ><div class="icon-container"><CodeBracketIcon /></div>
-      software</NuxtLink
+      projects</NuxtLink
     >
   </nav>
 </template>
