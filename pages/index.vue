@@ -36,7 +36,12 @@
             >my girlfriend lotte</ProseA
           >!
         </ProseP>
-        <ProseP>
+      </div>
+    </div>
+    <div class="intro-container">
+      <div class="contact-me">
+      <ProseH2 id="contact-me">contact me</ProseH2>
+      <ProseP>
           if you want to talk to me, you can send me a message on
           <ProseA href="https://matrix.to/#/@bat:matrix.kittycat.homes"
             >matrix</ProseA
@@ -46,12 +51,17 @@
             >discord</ProseA
           >. generally i will answer faster on matrix.
         </ProseP>
-        <ProseP>
+        </div>
+    </div>
+    <div class="intro-container">
+      <div class="webring">
+      <ProseH2 id="webring">webring</ProseH2>
+      <ProseP>
           this page is part of the
           <ProseA href="https://ring.bicompact.space/">armisael webring</ProseA
           >. check it out!
         </ProseP>
-      </div>
+        </div>
     </div>
   </div>
 </template>
@@ -82,6 +92,10 @@ definePageMeta({ documentDriven: false });
   aspect-ratio: 1/1;
 }
 
+.contact-me {
+  padding: var(--pad-size);
+}
+
 .who-am-i {
   flex-basis: 0;
   display: flex;
@@ -89,6 +103,10 @@ definePageMeta({ documentDriven: false });
   gap: var(--pad-size);
   padding: var(--pad-size);
   flex-grow: 2;
+  padding: var(--pad-size);
+}
+
+.webring {
   padding: var(--pad-size);
 }
 
