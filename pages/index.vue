@@ -38,7 +38,7 @@
         </ProseP>
       </div>
     </div>
-    <div class="intro-container">
+    <div class="intro-container contact-container">
       <div class="contact-me">
       <ProseH2 id="contact-me">contact me</ProseH2>
       <ProseP>
@@ -94,6 +94,10 @@ definePageMeta({ documentDriven: false });
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+.intro-container.contact-container {
+  flex-direction: column-reverse;
 }
 
 .model-3d {
