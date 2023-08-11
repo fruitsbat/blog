@@ -127,22 +127,22 @@ definePageMeta({ documentDriven: false });
   position: absolute;
 }
 
-@media screen and (max-width: 640px) {
-  .intro-container.contact-container {
-    flex-direction: column-reverse;
-  }
-  .intro-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
+// @media screen and (max-width: 640px) {
+//   .intro-container.contact-container {
+//     flex-direction: column-reverse;
+//   }
+//   .intro-container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: stretch;
+//   }
 
-  .model-3d {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-}
+//   .model-3d {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 100%;
+//     aspect-ratio: 1/1;
+//   }
+// }
 </style>
