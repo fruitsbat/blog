@@ -12,8 +12,8 @@
         </div>
       </div>
       <div :v-if="toc">
+        <ProseH2 id="toc">outline</ProseH2>
         <ol>
-          <ProseH2 id="toc">outline</ProseH2>
           <li v-for="heading in toc?.links">
             <a :href="`#${heading.id}`">{{ heading.text ?? "no heading" }}</a>
           </li>
@@ -35,6 +35,10 @@ const toc = page.body.toc;
 
 <style scoped lang="scss">
 @import "@/assets/scss/shadows.scss";
+
+#toc {
+  padding-left: var(--pad-size);
+}
 
 main {
   color: var(--white);
