@@ -25,8 +25,6 @@ useHead({
 const documents = await queryContent<Project>("projects")
   .sort({ date: -1})
   .find();
-
-console.log(documents);
 </script>
 
 <style scoped lang="scss">
