@@ -15,14 +15,13 @@
           to answer.
         </ProseP>
         <ProseP>
-        i'm <ProseStrong>zoe</ProseStrong>, a <ProseStrong>22</ProseStrong> year old university student from <ProseStrong>hamburg</ProseStrong>.
+          i'm <ProseStrong>zoe</ProseStrong>, a
+          <ProseStrong>22</ProseStrong> year old university student from
+          <ProseStrong>hamburg</ProseStrong>.
         </ProseP>
         <ProseP
-          ><ProseStrong
-            >i love to
-            spin around on this website</ProseStrong
-          >
-          but can enjoy other things too.</ProseP
+          ><ProseStrong>i love to spin around on this website</ProseStrong> but
+          can enjoy other things too.</ProseP
         >
         <ProseP>
           these include but are not limited to:
@@ -40,8 +39,8 @@
     </div>
     <div class="intro-container contact-container">
       <div class="contact-me">
-      <ProseH2 id="contact-me">contact me</ProseH2>
-      <ProseP>
+        <ProseH2 id="contact-me">contact me</ProseH2>
+        <ProseP>
           if you want to talk to me, you can send me a message on
           <ProseA href="https://matrix.to/#/@bat:matrix.kittycat.homes"
             >matrix</ProseA
@@ -51,8 +50,8 @@
             >discord</ProseA
           >. generally i will answer faster on matrix.
         </ProseP>
-        </div>
-        <div class="model-3d">
+      </div>
+      <div class="model-3d">
         <ClientOnly>
           <ThreeDeeModel file="/models/letter.gltf" class="mini-me" />
         </ClientOnly>
@@ -65,13 +64,13 @@
         </ClientOnly>
       </div>
       <div class="webring">
-      <ProseH2 id="webring">webring</ProseH2>
-      <ProseP>
+        <ProseH2 id="webring">webring</ProseH2>
+        <ProseP>
           this page is part of the
           <ProseA href="https://ring.bicompact.space/">armisael webring</ProseA
           >. check it out!
         </ProseP>
-        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -94,10 +93,6 @@ definePageMeta({ documentDriven: false });
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-}
-
-.intro-container.contact-container {
-  flex-direction: column-reverse;
 }
 
 .model-3d {
@@ -133,6 +128,9 @@ definePageMeta({ documentDriven: false });
 }
 
 @media screen and (max-width: 1280px) {
+  .intro-container.contact-container {
+    flex-direction: column-reverse;
+  }
   .intro-container {
     display: flex;
     flex-direction: column;
