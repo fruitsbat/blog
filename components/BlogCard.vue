@@ -1,13 +1,13 @@
 <template>
-  <NuxtLink :to="post._path">
+  <NuxtLink :to="link">
     <div
       ref="target"
       class="postcard"
-      v-bind:style="{ backgroundImage: 'url(' + post.image + ')' }"
+      v-bind:style="{ backgroundImage: 'url(' + image + ')' }"
     >
       <div class="postcard-overlay">
         <div class="postcard-texture">
-          <h2>{{ post.title }}</h2>
+          <h2>{{ title }}</h2>
         </div>
       </div>
     </div></NuxtLink
@@ -18,7 +18,9 @@
 import { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 defineProps<{
-  post: ParsedContent;
+  title: string;
+  image: string;
+  link: string;
 }>();
 
 const target = ref(null);

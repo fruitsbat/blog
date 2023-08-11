@@ -2,7 +2,7 @@
   <TitleBar title="weblog"/>
   <div class="postlist">
     <div v-for="post in blogposts">
-        <BlogCard :post="post" />
+        <BlogCard :image="post.image" :title="post.title ?? 'no title'" :link="post._path ?? './'" />
     </div>
   </div>
 </template>
