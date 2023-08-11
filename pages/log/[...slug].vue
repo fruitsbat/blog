@@ -11,12 +11,14 @@
           </div>
         </div>
       </div>
-      <ol :v-if="toc">
-        <ProseH2 id="toc">outline</ProseH2>
-        <li v-for="heading in toc?.links">
-          <a :href="`#${heading.id}`">{{ heading.text ?? "no heading" }}</a>
-        </li>
-      </ol>
+      <div :v-if="toc">
+        <ol>
+          <ProseH2 id="toc">outline</ProseH2>
+          <li v-for="heading in toc?.links">
+            <a :href="`#${heading.id}`">{{ heading.text ?? "no heading" }}</a>
+          </li>
+        </ol>
+      </div>
       <ContentRendererMarkdown class="post-content" :value="page" />
     </ContentDoc>
   </main>
