@@ -46,7 +46,7 @@ export default {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setPixelRatio(1 / (width / 200));
+      renderer.setPixelRatio(1 / (width / 125));
     }
 
     const model = await loader.loadAsync(this.file);
