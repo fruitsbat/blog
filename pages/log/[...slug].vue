@@ -11,9 +11,9 @@
           </div>
         </div>
       </div>
-      <ol>
+      <ol :v-if="toc">
         <ProseH2 id="toc">outline</ProseH2>
-        <li v-for="heading in toc.links">
+        <li v-for="heading in toc?.links">
           <a :href="`#${heading.id}`">{{ heading.text ?? "no heading" }}</a>
         </li>
       </ol>
@@ -23,8 +23,12 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ documentDriven: true });
-const { page, toc, next, prev } = useContent();
+import { Blogpost } from "~/types/index";
+
+definePageMeta({ documentDriven: false });
+const route = useRoute();
+const page = await queryContent<Blogpost>(route.path).findOne();
+const toc = page.body.toc;
 </script>
 
 <style scoped lang="scss">

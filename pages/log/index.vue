@@ -19,7 +19,7 @@ const documents = await queryContent()
   .sort({ date: 1 })
   .find();
 const blogposts = documents.filter(
-  (doc) => doc?._path?.includes("/log") && !doc?._partial
+  (doc) => doc?._path?.startsWith("/log") && !doc?._partial
 );
 </script>
 

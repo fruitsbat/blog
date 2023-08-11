@@ -1,6 +1,6 @@
 ---
 date: "10 August 2023"
-title: "pico8 on odroid with jelos"
+title: "pico-8 on odroid go ultra with jelos"
 image: "/img/odroid_jelos_pico8.webp"
 ---
 
