@@ -14,7 +14,7 @@
     >
     <NuxtLink to="/code"
       ><div class="icon-container"><CodeBracketIcon /></div>
-      code</NuxtLink
+      software</NuxtLink
     >
   </nav>
 </template>
@@ -31,6 +31,7 @@ a {
   @include text-shadows;
   @include drop-shadows;
   display: flex;
+  justify-content: space-around;
   gap: var(--pad-size-small);
   text-decoration: none;
   align-items: center;
