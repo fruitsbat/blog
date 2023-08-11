@@ -15,7 +15,7 @@
           to answer.
         </ProseP>
         <ProseP>
-        i'm <ProseString>zoe</ProseString>, a <ProseStrong>22</ProseStrong> year old university student from <ProseStrong>hamburg</ProseStrong>.
+        i'm <ProseStrong>zoe</ProseStrong>, a <ProseStrong>22</ProseStrong> year old university student from <ProseStrong>hamburg</ProseStrong>.
         </ProseP>
         <ProseP
           ><ProseStrong
