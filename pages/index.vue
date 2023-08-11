@@ -127,4 +127,20 @@ definePageMeta({ documentDriven: false });
 .overlay {
   position: absolute;
 }
+
+@media screen and (max-width: 1280px) {
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .model-3d {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
 </style>
