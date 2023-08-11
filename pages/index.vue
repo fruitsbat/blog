@@ -1,7 +1,7 @@
 <template>
   <div>
     <TitleBar title="home" />
-    <div class="intro-container">
+    <div class="intro-container minime-container">
       <div class="model-3d">
         <ClientOnly>
           <ThreeDeeModel file="/models/minime.gltf" class="mini-me" />
@@ -127,22 +127,19 @@ definePageMeta({ documentDriven: false });
   position: absolute;
 }
 
-@media screen and (max-width: 640px) {
-  .intro-container.contact-container {
-     flex-direction: column-reverse;
-   }
-   .intro-container {
-     display: flex;
-     flex-direction: column;
-     align-items: stretch;
-   }
+@media screen and (max-width: 720px) {
+  .intro-container.minime-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-  .model-3d {
-     display: flex;
+  .minime-container > .model-3d {
+    display: flex;
     align-items: center;
-     justify-content: center;
-     width: 100%;
-     aspect-ratio: 1/1;
-   }
-    }
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
 </style>
