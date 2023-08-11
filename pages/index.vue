@@ -52,8 +52,18 @@
           >. generally i will answer faster on matrix.
         </ProseP>
         </div>
+        <div class="model-3d">
+        <ClientOnly>
+          <ThreeDeeModel file="/models/letter.gltf" class="mini-me" />
+        </ClientOnly>
+      </div>
     </div>
     <div class="intro-container">
+      <div class="model-3d">
+        <ClientOnly>
+          <ThreeDeeModel file="/models/globe.gltf" class="mini-me" />
+        </ClientOnly>
+      </div>
       <div class="webring">
       <ProseH2 id="webring">webring</ProseH2>
       <ProseP>
@@ -94,6 +104,8 @@ definePageMeta({ documentDriven: false });
 
 .contact-me {
   padding: var(--pad-size);
+  flex-basis: 0;
+  flex-grow: 2;
 }
 
 .who-am-i {
@@ -108,28 +120,11 @@ definePageMeta({ documentDriven: false });
 
 .webring {
   padding: var(--pad-size);
+  flex-grow: 2;
+  flex-basis: 0;
 }
 
 .overlay {
   position: absolute;
-}
-
-@media screen and (max-width: 1280px) {
-  .intro-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mini-me {
-    max-width: calc(100vh / 3);
-  }
-
-  .model-3d {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
 }
 </style>
