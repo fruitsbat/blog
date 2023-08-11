@@ -23,7 +23,7 @@ useHead({
 });
 // query blogposts
 const documents = await queryContent<Project>("projects")
-  .sort({ date: 1})
+  .sort({ date: -1})
   .find();
 
 console.log(documents);
