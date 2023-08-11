@@ -6,6 +6,7 @@ export default defineEventHandler(async (event) => {
   // query blogposts
   const documents = await serverQueryContent(event)
     .sort({ date: -1 })
+    .limit(50)
     .where({ _partial: false })
     .find();
 

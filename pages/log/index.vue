@@ -15,8 +15,7 @@ useHead({
 // query blogposts
 const documents = await queryContent()
   .where({ _partial: false })
-  .sort({ date: 1 })
-  .sort({ date: 1 })
+  .sort({ createdAt: 1 })
   .find();
 const blogposts = documents.filter(
   (doc) => doc?._path?.startsWith("/log") && !doc?._partial

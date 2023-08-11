@@ -1,5 +1,5 @@
 ---
-date: "4 April 2023"
+date: 2023-04-04
 title: "rust on atmega32u4"
 image: "/img/blink.webp"
 ---
