@@ -102,6 +102,7 @@ definePageMeta({ documentDriven: false });
 }
 
 .contact-me {
+  text-align: right;
   padding: var(--pad-size);
   flex-basis: 0;
   flex-grow: 2;
