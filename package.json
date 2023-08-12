@@ -19,6 +19,7 @@
     "@types/three": "^0.155.0",
     "@vueuse/core": "^10.3.0",
     "@vueuse/nuxt": "^10.3.0",
+    "@vueuse/sound": "^2.0.1",
     "feed": "^4.2.2",
     "howler": "^2.2.3",
     "lerp": "^1.0.3",
