@@ -67,9 +67,9 @@ a:hover .rss-link-texture {
   background-image: linear-gradient(
     -45deg,
     var(--ternary-accent),
-    var(--secondary-accent) 12.5%,
-    var(--secondary-accent) 87.5%,
-    var(--accent)
+    var(--accent) 12.5%,
+    var(--accent) 87.5%,
+    var(--secondary-accent)
   );
   z-index: 1000;
   @include drop-shadows;

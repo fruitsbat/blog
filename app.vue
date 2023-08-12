@@ -1,7 +1,10 @@
 <template>
   <div class="app">
     <div class="content">
-      <NuxtPage />
+      <div class="page-content">
+        <NuxtPage />
+      </div>
+    <MusicPlayer v-if="store.currentSong && showNavigation" />
     </div>
     <div v-if="showNavigation" class="navbar">
       <NavBar>
@@ -23,6 +26,8 @@
 <script setup lang="ts">
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/solid";
 const showNavigation = ref(true);
+import { useNPStore } from "~/stores/now_playing_store";
+const store = useNPStore();
 </script>
 
 <style scoped lang="scss">
@@ -39,6 +44,15 @@ const showNavigation = ref(true);
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: hide;
+  overflow-x: hide;
+}
+
+.page-content {
   overflow-y: scroll;
   flex-grow: 1;
   background-color: var(--black);
@@ -116,7 +130,7 @@ const showNavigation = ref(true);
 }
 
 @media (prefers-color-scheme: light) {
-  .content {
+  .page-content {
     background-color: var(--white);
   }
 }

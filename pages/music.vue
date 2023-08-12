@@ -26,15 +26,7 @@
         </ul>
       </div>
     </div>
-    <div class="music-player">
-      <div v-if="store.currentSong" class="now-playing">
-        <span>{{ store.currentSong.title }}</span>
-        <span
-          >{{ store.seek }} /
-          {{ prettyMilliseconds(Math.ceil(player.duration()) * 1000) }}</span
-        >
-      </div>
-    </div>
+    
   </div>
 </template>
 
@@ -48,7 +40,7 @@ useHead({
 
 import { Song } from "types";
 import { useNPStore, player } from "~/stores/now_playing_store";
-import prettyMilliseconds from "pretty-ms";
+
 
 const store = useNPStore();
 store.load();
