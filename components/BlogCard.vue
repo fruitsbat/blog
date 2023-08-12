@@ -79,7 +79,7 @@ h2 {
   align-items: center;
 }
 
-a:hover .postcard-texture {
+a:hover .postcard-texture, a:focus .postcard-texture {
   @include animated-background;
   color: var(--white);
   transform: translate3d(0, 0, var(--fs-xl));
@@ -110,7 +110,7 @@ a {
 }
 
 
-a:hover .postcard {
+a:hover .postcard, a:focus .postcard {
     filter: drop-shadow(var(--fs-xl) 0 2em var(--secondary-accent))
       drop-shadow(calc(var(--fs-xl) * -1) 0 2em var(--ternary-accent));
   }
