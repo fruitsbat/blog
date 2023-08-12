@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { Song } from "types";
 import { Howl } from "howler";
 
-let player = ref(
+const player = ref(
   new Howl({
     src: ["public/music/z-type-ultra_howells-theme.mp3.mp3"],
   })

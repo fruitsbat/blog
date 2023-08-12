@@ -1,7 +1,13 @@
 <template>
   <TitleBar title="music" />
   <div class="music-player">
-    <div class="now-playing"></div>
+    <div v-if="store.currentSong" class="now-playing">
+      <template :key="player.seek()">
+        <span>{{ player.seek() }}</span>
+      </template>
+      <span>{{ store.currentSong.title }}</span>
+      <span>{{ player.duration() }}</span>
+    </div>
     <div class="playlist">
       <ul>
         <li v-for="song in store.allSongs">
@@ -12,15 +18,15 @@
                 : store.play(song as Song)
             "
           >
-          <span v-if="song.title == store.currentSong?.title">
-            <div v-if="player.playing()">
-              <PauseIcon />
-            </div>
-            <div v-else>
-              <PlayIcon />
-            </div>
-          </span>
-          <span>{{song.title}}</span>
+            <span v-if="song.title == store.currentSong?.title">
+              <div v-if="player.playing()">
+                <PauseIcon />
+              </div>
+              <div v-else>
+                <PlayIcon />
+              </div>
+            </span>
+            <span>{{ song.title }}</span>
           </button>
         </li>
       </ul>
