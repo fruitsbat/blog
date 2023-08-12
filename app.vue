@@ -38,18 +38,18 @@ const store = useNPStore();
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   height: 100%;
   width: 100vw;
 }
 
 .content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-  overflow-y: hide;
-  overflow-x: hide;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .page-content {
@@ -111,7 +111,6 @@ const store = useNPStore();
 
 .navbar {
   z-index: 999999999999;
-  overflow: visible;
   box-shadow: 0 -0.1em 1em var(--ternary-accent),
     0 -0.1em 1em var(--secondary-accent);
   display: flex;
