@@ -3,23 +3,30 @@
     <div class="content">
       <div class="page-content">
         <NuxtPage />
+        <button
+          class="menu-button show-menu-button"
+          @click="showNavigation = true"
+          v-if="!showNavigation"
+        >
+          <Bars3Icon />
+          menu
+        </button>
       </div>
-    <MusicPlayer v-if="store.currentSong && showNavigation" />
+      <MusicPlayer v-if="store.currentSong" />
     </div>
     <div v-if="showNavigation" class="navbar">
       <NavBar>
         <template v-slot:extra-buttons>
-          <button class="menu-button close-menu-button" @click="showNavigation = false">
+          <button
+            class="menu-button close-menu-button"
+            @click="showNavigation = false"
+          >
             <XMarkIcon />
             close
           </button>
         </template>
       </NavBar>
     </div>
-    <button class="menu-button show-menu-button" @click="showNavigation = true" v-else>
-      <Bars3Icon/>
-      menu
-    </button>
   </div>
 </template>
 
@@ -53,13 +60,14 @@ const store = useNPStore();
 }
 
 .page-content {
+  position: relative;
   overflow-y: scroll;
   flex-grow: 1;
   background-color: var(--black);
 }
 
 .show-menu-button {
-  position: absolute;
+  position: sticky;
   right: var(--pad-size-small);
   bottom: var(--pad-size-small);
   display: flex;
@@ -75,16 +83,19 @@ const store = useNPStore();
   gap: var(--pad-size-small);
   justify-content: center;
   align-items: center;
+  width: min-content;
   @include drop-shadows;
   @include text-shadows;
 }
 
-.show-menu-button > svg {
+.show-menu-button svg {
   width: var(--fs-regular);
+  height: var(--fs-regular);
   @include drop-shadows;
 }
 
-.show-menu-button:hover, .show-menu-button:focus {
+.show-menu-button:hover,
+.show-menu-button:focus {
   cursor: pointer;
   color: var(--white);
   @include animated_background;
@@ -100,7 +111,8 @@ const store = useNPStore();
   background-color: transparent;
 }
 
-.close-menu-button:hover, .close-menu-button:focus {
+.close-menu-button:hover,
+.close-menu-button:focus {
   cursor: pointer;
 }
 

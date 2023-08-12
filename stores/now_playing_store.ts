@@ -41,8 +41,11 @@ export const useNPStore = defineStore({
       const songs = await queryContent<Song>("music").sort({ date: -1 }).find();
       this.allSongs = songs;
       this.loaded = true;
-      this.changeSong(this.allSongs[0]);
       timeUpdate();
+    },
+    stop() {
+      player.value.stop();
+      this.currentSong = null;
     },
     play(song: Song) {
       this.changeSong(song);
