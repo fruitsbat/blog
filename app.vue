@@ -27,6 +27,7 @@ const showNavigation = ref(true);
 
 <style scoped lang="scss">
 @import "~/assets/scss/animated_background.scss";
+@import "~/assets/scss/shadows.scss";
 .app {
   position: fixed;
   display: flex;
@@ -61,10 +62,13 @@ const showNavigation = ref(true);
   background-image: url("/img/texture.webp");
   word-break: keep-all;
   gap: var(--pad-size-small);
+  @include drop-shadows;
+  @include text-shadows;
 }
 
 .menu-button > svg {
   width: var(--fs-regular);
+  @include drop-shadows;
 }
 
 .menu-button:hover, .menu-button:focus {
