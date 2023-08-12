@@ -80,44 +80,44 @@ svg {
   display: flex;
 }
 
-@media screen and (max-width: 720px) {
-  a {
-    padding: 0em;
-    flex-direction: column;
-    background-color: transparent;
-    color: var(--black);
-    background-image: none;
-  }
+// @media screen and (max-width: 720px) {
+//   a {
+//     padding: 0em;
+//     flex-direction: column;
+//     background-color: transparent;
+//     color: var(--black);
+//     background-image: none;
+//   }
 
-  a:hover > .icon-container {
-    @include animated-background;
-  }
+//   a:hover > .icon-container {
+//     @include animated-background;
+//   }
 
-  a:hover svg {
-    color: var(--white);
-  }
+//   a:hover svg {
+//     color: var(--white);
+//   }
 
-  a:hover {
-    color: var(--black);
-  }
+//   a:hover {
+//     color: var(--black);
+//   }
 
-  svg {
-    padding: var(--pad-size-small);
-    color: var(--accent);
-    width: var(--fs-xl);
-    height: var(--fs-xl);
-  }
+//   svg {
+//     padding: var(--pad-size-small);
+//     color: var(--accent);
+//     width: var(--fs-xl);
+//     height: var(--fs-xl);
+//   }
 
-  .icon-container {
-    aspect-ratio: 1/1;
-    width: min-content;
-    height: min-content;
-    background-image: url("/img/texture.webp");
-    border-radius: var(--radius);
-    background-color: var(--black);
-    color: var(--accent);
-  }
-}
+//   .icon-container {
+//     aspect-ratio: 1/1;
+//     width: min-content;
+//     height: min-content;
+//     background-image: url("/img/texture.webp");
+//     border-radius: var(--radius);
+//     background-color: var(--black);
+//     color: var(--accent);
+//   }
+// }
 
 @media (orientation: landscape) {
   nav {
