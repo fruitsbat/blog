@@ -15,8 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { ParsedContent } from "@nuxt/content/dist/runtime/types";
-
 defineProps<{
   title: string;
   image: string;
@@ -24,15 +22,19 @@ defineProps<{
 }>();
 
 const target = ref(null);
-const { elementX, elementY } = useMouseInElement(target);
+const { elementX, elementY, isOutside } = useMouseInElement(target);
 const { width, height } = useElementSize(target);
 
 const computedX = computed(() => {
-  return `${(elementX.value / width.value - 0.5) * 24}deg`;
+  return isOutside.value
+    ? 0
+    : `${(elementX.value / width.value - 0.5) * 24}deg`;
 });
 
 const computedY = computed(() => {
-  return `${(elementY.value / height.value - 0.5) * 24}deg`;
+  return isOutside.value
+    ? 0
+    : `${(elementY.value / height.value - 0.5) * 24}deg`;
 });
 </script>
 
@@ -101,13 +103,18 @@ a {
 }
 
 @media (hover: hover) {
-  a:hover .postcard {
+  a .postcard {
     transform: rotate3d(0, 1, 0, v-bind(computedX))
       rotate3d(1, 0, 0, v-bind(computedY));
+  }
+}
+
+
+a:hover .postcard {
     filter: drop-shadow(var(--fs-xl) 0 2em var(--secondary-accent))
       drop-shadow(calc(var(--fs-xl) * -1) 0 2em var(--ternary-accent));
   }
-}
+
 
 @media screen and (max-width: 720) {
   .postcard,
