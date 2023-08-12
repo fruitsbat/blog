@@ -62,6 +62,8 @@ const showNavigation = ref(true);
   background-image: url("/img/texture.webp");
   word-break: keep-all;
   gap: var(--pad-size-small);
+  justify-content: center;
+  align-items: center;
   @include drop-shadows;
   @include text-shadows;
 }
