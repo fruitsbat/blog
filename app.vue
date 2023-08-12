@@ -6,7 +6,7 @@
     <div v-if="showNavigation" class="navbar">
       <NavBar>
         <template v-slot:extra-buttons>
-          <button class="menu-button" @click="showNavigation = false">
+          <button class="menu-button close-menu-button" @click="showNavigation = false">
             <XMarkIcon />
             close
           </button>
@@ -48,9 +48,6 @@ const showNavigation = ref(true);
   position: absolute;
   right: var(--pad-size-small);
   bottom: var(--pad-size-small);
-}
-
-.menu-button {
   display: flex;
   flex-direction: row;
   font-size: var(--fs-small);
@@ -68,15 +65,34 @@ const showNavigation = ref(true);
   @include text-shadows;
 }
 
-.menu-button > svg {
+.show-menu-button > svg {
   width: var(--fs-regular);
   @include drop-shadows;
 }
 
-.menu-button:hover, .menu-button:focus {
+.show-menu-button:hover, .show-menu-button:focus {
   cursor: pointer;
   color: var(--white);
   @include animated_background;
+}
+
+.close-menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: keep-all;
+  gap: var(--pad-size-small);
+  border-style: none;
+  background-color: transparent;
+}
+
+.close-menu-button:hover, .close-menu-button:focus {
+  cursor: pointer;
+}
+
+.close-menu-button svg {
+  width: var(--fs-regular);
+  height: var(--fs-regular);
 }
 
 .navbar {
