@@ -41,9 +41,14 @@ export const useNPStore = defineStore({
       const songs = await queryContent<Song>("music").sort({ date: -1 }).find();
       this.allSongs = songs;
       this.loaded = true;
+      this.changeSong(this.allSongs[0]);
       timeUpdate();
     },
     play(song: Song) {
+      this.changeSong(song);
+      player.value.play();
+    },
+    changeSong(song: Song) {
       if (player) {
         player.value.stop();
       }
@@ -53,7 +58,7 @@ export const useNPStore = defineStore({
         volume: this.volume,
         html5: true,
       });
-      player.value.play();
+
       this.currentSong = song;
     },
     togglePlay() {

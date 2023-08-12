@@ -1,6 +1,6 @@
 <template>
   <div class="music-container">
-    <div class="content">
+    <div class="music-content">
       <TitleBar title="music" />
       <div class="playlist">
         <ul>
@@ -55,13 +55,15 @@ store.load();
 </script>
 
 <style scoped lang="scss">
-.content {
+.music-content {
+  overflow-y: auto;
+  height: 100%;
   flex-grow: 1;
 }
 
 .music-container {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 </style>
