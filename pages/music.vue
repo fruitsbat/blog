@@ -13,7 +13,7 @@
             "
           >
           <span v-if="song.title == store.currentSong?.title">
-            <div v-if="store.playing">
+            <div v-if="player.playing()">
               <PauseIcon />
             </div>
             <div v-else>
@@ -37,7 +37,7 @@ useHead({
 });
 
 import { Song } from "types";
-import { useNPStore } from "~/stores/now_playing_store";
+import { useNPStore, player } from "~/stores/now_playing_store";
 const store = useNPStore();
 store.load();
 </script>

@@ -2,13 +2,18 @@ import { defineStore } from "pinia";
 import { Song } from "types";
 import { Howl } from "howler";
 
-let player: Howl;
+let player = ref(
+  new Howl({
+    src: ["public/music/z-type-ultra_howells-theme.mp3.mp3"],
+  })
+);
+
+export { player };
 
 type NPState = {
   allSongs: Song[];
   currentSong: Song | null;
   volume: number;
-  playing: boolean;
 };
 
 export const useNPStore = defineStore({
@@ -26,33 +31,25 @@ export const useNPStore = defineStore({
       this.allSongs = songs;
     },
     play(song: Song) {
-      this.playing = true;
       if (player) {
-        player.stop();
+        player.value.stop();
       }
 
-      player = new Howl({
+      player.value = new Howl({
         src: [song.file],
         volume: this.volume,
         html5: true,
       });
-      player.play();
+      player.value.play();
       this.currentSong = song;
     },
     togglePlay() {
-      if (player.playing()) {
-        player.pause();
-        this.playing = false;
+      if (player.value.playing()) {
+        player.value.pause();
         return;
       }
 
-      player.play();
-      this.playing = true;
-    },
-  },
-  getters: {
-    position() {
-      return player.seek();
+      player.value.play();
     },
   },
 });
