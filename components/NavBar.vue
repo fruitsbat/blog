@@ -1,4 +1,5 @@
 <template>
+  <div class="navbar-container">
   <nav>
     <NuxtLink to="/"
       ><div class="icon-container"><HomeIcon /></div>
@@ -17,6 +18,9 @@
       projects</NuxtLink
     >
   </nav>
+  <slot name="extra-buttons">
+  </slot>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -43,6 +47,13 @@ a {
   background-image: url("/img/texture.webp");
 }
 
+nav {
+  display: flex;
+  gap: var(--pad-size);
+  flex-grow: 1;
+  justify-content: center;
+}
+
 a:hover {
   color: var(--white);
   animation: animatedBackground 30s linear infinite;
@@ -54,15 +65,15 @@ svg {
   @include drop-shadows;
 }
 
-nav {
+.navbar-container {
   display: flex;
-  width: 100%;
   padding: var(--pad-size-small);
   align-items: center;
   justify-content: center;
   gap: var(--pad-size);
   background-image: url("/img/texture.webp");
   overflow-x: auto;
+  width: 100%;
 }
 
 .icon-container {
@@ -110,6 +121,9 @@ nav {
 
 @media (orientation: landscape) {
   nav {
+    flex-direction: column;
+  }
+  .navbar-container {
     flex-grow: 1;
     flex-direction: column;
     overflow-y: auto;

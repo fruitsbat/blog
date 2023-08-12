@@ -3,13 +3,30 @@
     <div class="content">
       <NuxtPage />
     </div>
-    <div class="navbar">
-      <NavBar />
+    <div v-if="showNavigation" class="navbar">
+      <NavBar>
+        <template v-slot:extra-buttons>
+          <button class="menu-button" @click="showNavigation = false">
+            <XMarkIcon />
+            close
+          </button>
+        </template>
+      </NavBar>
     </div>
+    <button class="menu-button show-menu-button" @click="showNavigation = true" v-else>
+      <Bars3Icon/>
+      menu
+    </button>
   </div>
 </template>
 
-<style scoped>
+<script setup lang="ts">
+import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/solid";
+const showNavigation = ref(true);
+</script>
+
+<style scoped lang="scss">
+@import "~/assets/scss/animated_background.scss";
 .app {
   position: fixed;
   display: flex;
@@ -24,6 +41,36 @@
   overflow-y: scroll;
   flex-grow: 1;
   background-color: var(--black);
+}
+
+.show-menu-button {
+  position: absolute;
+  right: var(--pad-size-small);
+  bottom: var(--pad-size-small);
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--fs-small);
+  background-color: var(--black);
+  border: none;
+  padding: var(--pad-size-small);
+  border-radius: var(--radius);
+  color: var(--accent);
+  background-image: url("/img/texture.webp");
+  word-break: keep-all;
+  gap: var(--pad-size-small);
+}
+
+.menu-button > svg {
+  width: var(--fs-regular);
+}
+
+.menu-button:hover, .menu-button:focus {
+  cursor: pointer;
+  color: var(--white);
+  @include animated_background;
 }
 
 .navbar {
@@ -55,6 +102,10 @@
 @media (orientation: landscape) {
   .app {
     flex-direction: row-reverse;
+  }
+
+  .show-menu-button {
+    left: var(--pad-size-small);
   }
 
   .navbar {
