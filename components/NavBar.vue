@@ -45,6 +45,7 @@ a {
   font-size: var(--fs-small);
   border-radius: var(--radius);
   background-image: url("/img/texture.webp");
+  word-break: keep-all;
 }
 
 nav {
@@ -52,6 +53,7 @@ nav {
   gap: var(--pad-size);
   flex-grow: 1;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 a:hover {
@@ -72,8 +74,9 @@ svg {
   justify-content: center;
   gap: var(--pad-size);
   background-image: url("/img/texture.webp");
-  overflow-x: auto;
+  overflow-x: hide;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .icon-container {
