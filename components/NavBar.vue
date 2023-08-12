@@ -9,10 +9,10 @@
       ><div class="icon-container"><RssIcon /></div>
       weblog</NuxtLink
     >
-    <!-- <NuxtLink to="/music"
+    <NuxtLink to="/music"
       ><div class="icon-container"><MusicalNoteIcon /></div>
       music</NuxtLink
-    > -->
+    >
     <NuxtLink to="/projects"
       ><div class="icon-container"><CodeBracketIcon /></div>
       projects</NuxtLink
