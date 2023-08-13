@@ -108,7 +108,6 @@ const store = useNPStore();
 
 .close-menu-button {
   display: flex;
-  margin-right: auto;
   justify-content: center;
   align-items: center;
   word-break: keep-all;
