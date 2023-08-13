@@ -6,22 +6,25 @@
         <PauseIcon />pause
       </button>
       <button v-else @click="store.togglePlay()"><PlayIcon />play</button>
-      <label for="music-seek"><MapPinIcon />position</label>
-      <Slider
-        id="music-seek"
-        :options="{animated: false,}"
-        :tooltips="false"
-        :max="player.duration()"
-        :min="0"
-        :step="0.05"
-        class="music-seek slider"
-        :value="player.seek()"
-        @slide="(value: number) => player.seek(value)"
-      />
+      <div class="position">
+        <label for="music-seek"><MapPinIcon />position</label>
+        <Slider
+          id="music-seek"
+          :options="{ animated: false }"
+          :tooltips="false"
+          :max="player.duration()"
+          :min="0"
+          :step="0.05"
+          class="music-seek slider"
+          :value="player.seek()"
+          @slide="(value: number) => player.seek(value)"
+        />
+      </div>
+      <div class="volume">
       <label for="music-volume"><SpeakerWaveIcon />volume</label>
       <Slider
         id="music-volume"
-        :options="{animated: false,}"
+        :options="{ animated: false }"
         :tooltips="false"
         :max="1"
         :min="0"
@@ -30,6 +33,7 @@
         :value="player.volume()"
         @change="(value: number) => player.volume(value)"
       />
+      </div>
     </div>
     <div class="info">
       <span class="seek-position">{{ store.seek }} </span>
@@ -165,6 +169,22 @@ a {
   --slider-bg: var(--ternary-accent);
   --slider-handle-shadow: none;
   --slider-handle-radius: var(--radius);
+}
+
+.volume {
+  min-width: 300px;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  gap: var(--pad-size-small);
+}
+
+.position {
+  min-width: 300px;
+  gap: var(--pad-size-small);
+  display: flex;
+  align-items: center;
+  flex-grow: 3;
 }
 </style>
 
