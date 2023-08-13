@@ -5,9 +5,13 @@ import prettyMilliseconds from "pretty-ms";
 
 const player = ref(
   new Howl({
+    loop: false,
     volume: 0.05,
     src: ["/music/z-type-ultra_howells-theme.mp3.mp3"],
     html5: true,
+    onend: function () {
+      randomSong();
+    },
   })
 );
 
@@ -60,6 +64,9 @@ export const useNPStore = defineStore({
         src: [song.file],
         volume: player.value.volume(),
         html5: true,
+        onend: function () {
+          randomSong();
+        },
       });
 
       this.currentSong = song;
@@ -80,4 +87,11 @@ async function timeUpdate() {
   store.seek = prettyMilliseconds(Math.floor(player.value.seek()) * 1000, {});
   store.progress = player.value.seek() / player.value.duration();
   setTimeout(timeUpdate, 1000);
+}
+
+function randomSong() {
+  const store = useNPStore();
+  const nextSong =
+    store.allSongs[Math.floor(Math.random() * store.allSongs.length)];
+  store.play(nextSong);
 }
