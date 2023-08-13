@@ -3,9 +3,10 @@
     <div class="music-content">
       <TitleBar title="music" />
       <div class="playlist">
-        <ul>
+        <ul class="songlist">
           <li v-for="song in store.allSongs">
             <button
+              class="song"
               @click="
                 store.currentSong == song
                   ? store.togglePlay()
@@ -13,12 +14,8 @@
               "
             >
               <span v-if="song.title == store.currentSong?.title">
-                <div v-if="player.playing()">
-                  <PauseIcon />
-                </div>
-                <div v-else>
-                  <PlayIcon />
-                </div>
+                <PauseIcon v-if="player.playing()" />
+                <PlayIcon v-else />
               </span>
               <span>{{ song.title }}</span>
             </button>
@@ -26,7 +23,6 @@
         </ul>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -40,7 +36,6 @@ useHead({
 
 import { Song } from "types";
 import { useNPStore, player } from "~/stores/now_playing_store";
-
 
 const store = useNPStore();
 store.load();
@@ -57,5 +52,44 @@ store.load();
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.songlist {
+  list-style: none;
+  padding: var(--pad-size);
+  gap: var(--pad-size-small);
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin song-border {
+  border: none;
+  border-top: solid;
+  border-bottom: solid;
+}
+
+.song {
+  padding: var(--pad-size);
+  @include song-border;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: var(--pad-size);
+  justify-content: left;
+  align-items: cen;
+}
+
+svg {
+  width: var(--fs-large);
+  height: var(--fs-large);
+}
+
+span {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
 }
 </style>

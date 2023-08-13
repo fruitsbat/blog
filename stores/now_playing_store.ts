@@ -5,7 +5,9 @@ import prettyMilliseconds from "pretty-ms";
 
 const player = ref(
   new Howl({
+    volume: 0.05,
     src: ["/music/z-type-ultra_howells-theme.mp3.mp3"],
+    html5: true,
   })
 );
 
@@ -14,7 +16,6 @@ export { player };
 type NPState = {
   allSongs: Song[];
   currentSong: Song | null;
-  volume: number;
   progress: number;
   loaded: boolean;
   seek: string;
@@ -27,7 +28,6 @@ export const useNPStore = defineStore({
       loaded: false,
       allSongs: [],
       currentSong: null,
-      volume: 0.1,
       playing: false,
       progress: 0,
       seek: "/",
@@ -58,7 +58,7 @@ export const useNPStore = defineStore({
 
       player.value = new Howl({
         src: [song.file],
-        volume: this.volume,
+        volume: player.value.volume(),
         html5: true,
       });
 
