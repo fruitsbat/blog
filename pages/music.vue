@@ -42,6 +42,7 @@ store.load();
 </script>
 
 <style scoped lang="scss">
+@import "~/assets/scss/shadows.scss";
 .music-content {
   overflow-y: auto;
   height: 100%;
@@ -79,6 +80,8 @@ store.load();
   background-color: transparent;
   color: var(--white);
   background-image: url("/img/texture.webp");
+  font-size: var(--fs-regular);
+  @include drop-shadows;
 }
 
 svg {

@@ -10,6 +10,7 @@
         <label for="music-seek"><MapPinIcon />position</label>
         <Slider
           id="music-seek"
+          :lazy="true"
           :options="{ animated: false }"
           :tooltips="false"
           :max="player.duration()"
@@ -17,13 +18,14 @@
           :step="0.05"
           class="music-seek slider"
           :value="player.seek()"
-          @slide="(value: number) => player.seek(value)"
+          @change="(value: number) => player.seek(value)"
         />
       </div>
       <div class="volume">
       <label for="music-volume"><SpeakerWaveIcon />volume</label>
       <Slider
         id="music-volume"
+        :lazy="true"
         :options="{ animated: false }"
         :tooltips="false"
         :max="1"
