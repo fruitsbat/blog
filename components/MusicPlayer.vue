@@ -8,7 +8,7 @@
       <button v-else @click="store.togglePlay()"><PlayIcon />play</button>
       <label for="music-seek"><MapPinIcon />position</label>
       <Slider
-        id="music-volume"
+        id="music-seek"
         :options="{animated: false,}"
         :tooltips="false"
         :max="player.duration()"
@@ -155,7 +155,7 @@ a {
 }
 
 .music-seek {
-  flex-grow: 1;
+  flex-grow: 6;
 }
 
 .slider {
