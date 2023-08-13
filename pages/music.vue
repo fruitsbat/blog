@@ -76,7 +76,9 @@ store.load();
   flex-direction: row;
   gap: var(--pad-size);
   justify-content: left;
-  align-items: cen;
+  background-color: transparent;
+  color: var(--white);
+  background-image: url("/img/texture.webp");
 }
 
 svg {
@@ -91,5 +93,11 @@ span {
 
 button {
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  .song {
+    color: var(--black);
+  }
 }
 </style>
