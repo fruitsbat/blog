@@ -40,7 +40,7 @@
     <div class="info">
       <span class="seek-position">{{ store.seek }} </span>
       <div class="song-title">
-        <span>{{ store.currentSong!.title }}</span>
+        <span><MusicalNoteIcon />{{ store.currentSong!.title }}</span>
         <a :href="store.currentSong!.file" download
           ><ArrowDownTrayIcon />download</a
         >
@@ -57,6 +57,7 @@ import Slider from "@vueform/slider";
 import prettyMilliseconds from "pretty-ms";
 import { useNPStore, player } from "~/stores/now_playing_store";
 import {
+  MusicalNoteIcon,
   StopIcon,
   PauseIcon,
   PlayIcon,
