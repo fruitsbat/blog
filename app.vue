@@ -60,13 +60,18 @@ const store = useNPStore();
 }
 
 .page-content {
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow-y: scroll;
   flex-grow: 1;
   background-color: var(--black);
+  align-items: stretch;
 }
 
 .show-menu-button {
+  margin-right: var(--pad-size-small);
+  margin-left: auto;
   position: sticky;
   right: var(--pad-size-small);
   bottom: var(--pad-size-small);
@@ -103,6 +108,7 @@ const store = useNPStore();
 
 .close-menu-button {
   display: flex;
+  margin-right: auto;
   justify-content: center;
   align-items: center;
   word-break: keep-all;
@@ -152,7 +158,7 @@ const store = useNPStore();
   }
 
   .show-menu-button {
-    left: var(--pad-size-small);
+    margin-left: var(--pad-size-small);
   }
 
   .navbar {
