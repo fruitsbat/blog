@@ -6,30 +6,39 @@
         <PauseIcon />pause
       </button>
       <button v-else @click="store.togglePlay()"><PlayIcon />play</button>
-      <label for="music-seek">position</label>
-      <input
-        class="music-seek"
-        id="music-seek"
-        type="range"
-        :value="player.seek()"
-        min="0"
+      <label for="music-seek"><MapPinIcon />position</label>
+      <Slider
+        id="music-volume"
+        :options="{animated: false,}"
+        :tooltips="false"
         :max="player.duration()"
-        @change="player.seek($event.target.value)"
+        :min="0"
+        :step="0.05"
+        class="music-seek slider"
+        :value="player.seek()"
+        @slide="(value: number) => player.seek(value)"
       />
       <label for="music-volume"><SpeakerWaveIcon />volume</label>
-      <input
+      <Slider
         id="music-volume"
-        type="range"
+        :options="{animated: false,}"
+        :tooltips="false"
+        :max="1"
+        :min="0"
+        :step="0.05"
+        class="volume-slider slider"
         :value="player.volume()"
-        min="0"
-        step="0.05"
-        max="1"
-        @change="player.volume($event.target.value)"
-      /> 
+        @change="(value: number) => player.volume(value)"
+      />
     </div>
     <div class="info">
       <span class="seek-position">{{ store.seek }} </span>
-      <span class="song-title">{{ store.currentSong.title }}</span>
+      <div class="song-title">
+        <span>{{ store.currentSong!.title }}</span>
+        <a :href="store.currentSong!.file" download
+          ><ArrowDownTrayIcon />download</a
+        >
+      </div>
       <span class="length">
         {{ prettyMilliseconds(Math.ceil(player.duration()) * 1000) }}</span
       >
@@ -37,14 +46,24 @@
   </div>
 </template>
 
-<script setup lang="js">
+<script setup lang="ts">
+import Slider from "@vueform/slider";
 import prettyMilliseconds from "pretty-ms";
 import { useNPStore, player } from "~/stores/now_playing_store";
-import { StopIcon, PauseIcon, PlayIcon, SpeakerWaveIcon } from "@heroicons/vue/24/solid";
+import {
+  StopIcon,
+  PauseIcon,
+  PlayIcon,
+  SpeakerWaveIcon,
+  MapPinIcon,
+  ArrowDownTrayIcon,
+} from "@heroicons/vue/24/solid";
 const store = useNPStore();
 </script>
 
 <style scoped lang="scss">
+@import "~/assets/scss/shadows.scss";
+
 .length {
   flex-grow: 1;
   flex-basis: 0;
@@ -57,15 +76,25 @@ const store = useNPStore();
 }
 
 .song-title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: var(--fs-small);
   text-align: center;
-  flex-grow: 2;
+  flex-grow: 3;
   flex-basis: 0;
+  gap: var(--pad-size-small);
+}
+
+.volume-slider {
+  flex-grow: 1;
 }
 
 .info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .control {
@@ -88,7 +117,9 @@ const store = useNPStore();
   display: flex;
   flex-direction: column;
   gap: var(--pad-size-small);
-  padding: var(--pad-size-small);
+  padding-left: var(--pad-size-small);
+  padding-right: var(--pad-size-small);
+  @include drop-shadows;
 }
 
 svg {
@@ -97,20 +128,44 @@ svg {
 }
 
 button {
-  gap: var(--pad-size-small);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  border-style: none;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
 }
 
 label {
   display: flex;
   align-items: center;
-  gap: var(--pad-size-small);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .music-seek {
   flex-grow: 1;
 }
+
+.slider {
+  @include drop-shadows;
+  --slider-handle-bg: var(--black);
+  --slider-connect-bg: var(--black);
+  --slider-bg: var(--ternary-accent);
+  --slider-handle-shadow: none;
+  --slider-handle-radius: var(--radius);
+}
 </style>
+
+<style src="@vueform/slider/themes/default.css"></style>
